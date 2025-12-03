@@ -1,0 +1,327 @@
+{
+  "version": "1.0.0",
+  "description": "TGC METAL ANALÍTICO ULTRA - Analysis Configuration",
+  "last_updated": "2024-12",
+  
+  "confidence_thresholds": {
+    "by_category": {
+      "precious_metals": {
+        "absolute": 99.0,
+        "high": 95.0,
+        "medium": 85.0,
+        "low": 75.0,
+        "reject": 60.0
+      },
+      "pgm": {
+        "absolute": 98.0,
+        "high": 93.0,
+        "medium": 83.0,
+        "low": 73.0,
+        "reject": 60.0
+      },
+      "base_metals": {
+        "absolute": 97.0,
+        "high": 92.0,
+        "medium": 82.0,
+        "low": 70.0,
+        "reject": 55.0
+      },
+      "sulfides": {
+        "absolute": 96.0,
+        "high": 90.0,
+        "medium": 80.0,
+        "low": 68.0,
+        "reject": 55.0
+      },
+      "oxides": {
+        "absolute": 95.0,
+        "high": 88.0,
+        "medium": 78.0,
+        "low": 65.0,
+        "reject": 50.0
+      },
+      "silicates": {
+        "absolute": 94.0,
+        "high": 87.0,
+        "medium": 75.0,
+        "low": 63.0,
+        "reject": 50.0
+      },
+      "carbonates": {
+        "absolute": 93.0,
+        "high": 85.0,
+        "medium": 73.0,
+        "low": 60.0,
+        "reject": 45.0
+      },
+      "halides": {
+        "absolute": 92.0,
+        "high": 84.0,
+        "medium": 72.0,
+        "low": 58.0,
+        "reject": 45.0
+      },
+      "phosphates": {
+        "absolute": 92.0,
+        "high": 84.0,
+        "medium": 72.0,
+        "low": 58.0,
+        "reject": 45.0
+      },
+      "gems": {
+        "absolute": 98.0,
+        "high": 94.0,
+        "medium": 88.0,
+        "low": 78.0,
+        "reject": 65.0
+      }
+    },
+    "gold_vs_pyrite_special": {
+      "criteria_12_of_12": 99.9,
+      "criteria_11_of_12": 98.5,
+      "criteria_10_of_12": 95.0,
+      "criteria_9_of_12": 90.0,
+      "criteria_8_of_12": 85.0,
+      "criteria_below_8": "manual_review_required"
+    }
+  },
+  
+  "engine_weights": {
+    "color_and_light": {
+      "lab_color_engine": 10,
+      "hsv_analyzer": 8,
+      "luminance_engine": 7,
+      "white_balance_auto": 6,
+      "clahe_enhancer": 5,
+      "total": 36
+    },
+    "brightness_reflection": {
+      "metallic_shine_detector": 12,
+      "specular_reflection_analyzer": 10,
+      "anisotropy_engine": 9,
+      "fresnel_reflection_engine": 15,
+      "subsurface_scattering_detector": 8,
+      "total": 54
+    },
+    "anti_confusion": {
+      "gold_vs_pyrite_discriminator": 20,
+      "exclusion_proof_analyzer": 12,
+      "zero_tolerance_confidence_engine": 15,
+      "total": 47
+    },
+    "texture_morphology": {
+      "gabor_texture_analyzer": 10,
+      "crystal_structure_detector": 9,
+      "morphology_classifier": 8,
+      "total": 27
+    },
+    "geological_context": {
+      "geological_context_engine": 7,
+      "deposit_fingerprint_matcher": 5,
+      "total": 12
+    },
+    "ai_ensemble": {
+      "resnet_152": 12,
+      "efficientnet_v2_l": 12,
+      "vit_large": 10,
+      "swin_transformer_v2": 10,
+      "convnext_xl": 10,
+      "unet_plusplus": 8,
+      "mask_rcnn": 8,
+      "yolov8_xl": 6,
+      "clip": 6,
+      "sam": 6,
+      "vae_autoencoder": 6,
+      "custom_mineral_net": 6,
+      "total": 100
+    }
+  },
+  
+  "mask_configurations": {
+    "class_colors": {
+      "gold": "#FFD700",
+      "silver": "#C0C0C0",
+      "platinum": "#E5E4E2",
+      "palladium": "#CED0DD",
+      "copper": "#B87333",
+      "iron": "#4A4A4A",
+      "pyrite": "#B4A050",
+      "chalcopyrite": "#B79E46",
+      "quartz": "#F5F5F5",
+      "magnetite": "#1A1A1A",
+      "hematite": "#704238",
+      "galena": "#5C5F66",
+      "sphalerite": "#8B5A2B",
+      "calcite": "#FFFFFF",
+      "olivine": "#9ACD32",
+      "default_metal": "#808080",
+      "default_sulfide": "#CCA366",
+      "default_oxide": "#8B4513",
+      "default_silicate": "#D3D3D3",
+      "default_carbonate": "#F0F0F0",
+      "default_gem": "#FF69B4"
+    },
+    "opacity": {
+      "solid": 1.0,
+      "high": 0.8,
+      "medium": 0.6,
+      "low": 0.4,
+      "transparent": 0.2
+    },
+    "boundary_styles": {
+      "default": {"width": 2, "color": "#FFFFFF", "style": "solid"},
+      "selected": {"width": 3, "color": "#00FF00", "style": "solid"},
+      "hovered": {"width": 2, "color": "#FFFF00", "style": "dashed"},
+      "low_confidence": {"width": 2, "color": "#FF0000", "style": "dotted"}
+    },
+    "heatmap_gradient": {
+      "stops": [
+        {"confidence": 0, "color": "#FF0000"},
+        {"confidence": 75, "color": "#FFA500"},
+        {"confidence": 85, "color": "#FFFF00"},
+        {"confidence": 95, "color": "#00FF00"},
+        {"confidence": 100, "color": "#00AA00"}
+      ]
+    }
+  },
+  
+  "calibration_parameters": {
+    "lighting": {
+      "preferred_temperature_k": 6500,
+      "acceptable_range_k": [5500, 7500],
+      "diffuse_recommended": true,
+      "avoid_direct_sunlight": true
+    },
+    "camera": {
+      "white_balance": "auto_with_verification",
+      "exposure": "auto_bracketing",
+      "iso": "auto_max_800",
+      "focus": "auto_macro"
+    },
+    "sample_preparation": {
+      "surface": "clean_and_dry",
+      "contamination": "remove_all",
+      "background": "neutral_gray_or_black",
+      "positioning": "stable_flat"
+    },
+    "reference_standards": {
+      "gold_24k": {"lab": [86.9, 1.9, 87.1], "reflectance": 95.0},
+      "pyrite_pure": {"lab": [75.0, 8.5, 65.0], "reflectance": 54.0},
+      "quartz_clear": {"lab": [95.0, 0.0, 0.0], "transparency": 0.9},
+      "magnetite": {"lab": [10.0, 0.0, 0.0], "magnetic": true}
+    }
+  },
+  
+  "performance_settings": {
+    "processing": {
+      "max_threads": "auto",
+      "gpu_acceleration": "preferred",
+      "memory_limit_mb": 4096,
+      "cache_enabled": true,
+      "cache_size_mb": 512
+    },
+    "timeouts": {
+      "instant_probe_ms": 10,
+      "deep_probe_ms": 100,
+      "full_analysis_ms": 500,
+      "ai_ensemble_ms": 2000,
+      "report_generation_s": 120
+    },
+    "quality_vs_speed": {
+      "ultra_fast": {"quality": 0.7, "speed": 1.0},
+      "fast": {"quality": 0.85, "speed": 0.8},
+      "balanced": {"quality": 0.95, "speed": 0.5},
+      "quality": {"quality": 0.99, "speed": 0.3},
+      "ultra_quality": {"quality": 0.999, "speed": 0.1}
+    }
+  },
+  
+  "ui_colors": {
+    "theme": {
+      "primary": "#1E3A8A",
+      "secondary": "#3B82F6",
+      "accent": "#FFD700",
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "danger": "#EF4444",
+      "background": "#F9FAFB",
+      "surface": "#FFFFFF",
+      "text_primary": "#111827",
+      "text_secondary": "#6B7280"
+    },
+    "confidence_indicators": {
+      "absolute": "#10B981",
+      "high": "#84CC16",
+      "medium": "#F59E0B",
+      "low": "#EF4444",
+      "unknown": "#9CA3AF"
+    }
+  },
+  
+  "detection_parameters": {
+    "mouse_hover": {
+      "instant_delay_ms": 0,
+      "deep_probe_delay_ms": 300,
+      "area_probe_delay_ms": 500,
+      "tooltip_fade_ms": 200
+    },
+    "auto_detection": {
+      "enabled": true,
+      "continuous_scan": true,
+      "scan_interval_ms": 100,
+      "min_particle_size_px": 10,
+      "max_particles_per_frame": 1000
+    },
+    "particle_segmentation": {
+      "method": "watershed",
+      "min_area_px": 50,
+      "max_area_px": 1000000,
+      "connectivity": 8,
+      "merge_threshold": 0.8
+    }
+  },
+  
+  "export_formats": {
+    "images": ["png", "jpg", "tiff", "bmp"],
+    "data": ["json", "xml", "csv", "xlsx"],
+    "reports": ["pdf", "html", "docx"],
+    "masks": ["png", "npy", "tiff"],
+    "default_compression": {
+      "png": "best",
+      "jpg": 95,
+      "tiff": "lzw"
+    }
+  },
+  
+  "localization": {
+    "default_language": "pt-BR",
+    "supported_languages": ["pt-BR", "en-US", "es-ES"],
+    "units": {
+      "length": "mm",
+      "mass": "g",
+      "temperature": "C",
+      "concentration": "percent"
+    }
+  },
+  
+  "advanced_settings": {
+    "machine_learning": {
+      "model_update_frequency": "weekly",
+      "active_learning_enabled": true,
+      "user_corrections_weight": 1.5,
+      "confidence_recalibration": "monthly"
+    },
+    "database": {
+      "auto_backup": true,
+      "backup_frequency": "daily",
+      "max_backup_age_days": 30,
+      "compression": "gzip"
+    },
+    "security": {
+      "encryption_enabled": true,
+      "blockchain_verification": true,
+      "audit_logging": true,
+      "session_timeout_minutes": 30
+    }
+  }
+}

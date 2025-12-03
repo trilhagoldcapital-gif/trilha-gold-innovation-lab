@@ -1,0 +1,1729 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "total_minerals": 84,
+    "last_updated": "2024-12",
+    "source": "TGC Innovation Lab",
+    "description": "Complete database of 84 minerals with optical, physical, and geological properties"
+  },
+  "minerals": [
+    {
+      "symbol": "Au",
+      "name": "Ouro",
+      "name_en": "Gold",
+      "category": "precious_metals",
+      "formula": "Au",
+      "atomic_number": 79,
+      "density_g_cm3": 19.3,
+      "hardness_mohs": 2.5,
+      "crystal_system": "cubic",
+      "luster": "metallic",
+      "streak": "golden-yellow",
+      "opacity": "opaque",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 255,
+          "g": 215,
+          "b": 0
+        },
+        "color_rgb_range": {
+          "r": [
+            245,
+            255
+          ],
+          "g": [
+            200,
+            230
+          ],
+          "b": [
+            0,
+            10
+          ]
+        },
+        "color_lab": {
+          "l": 86.9,
+          "a": 1.9,
+          "b": 87.1
+        },
+        "color_lab_range": {
+          "l": [
+            82,
+            92
+          ],
+          "a": [
+            -3,
+            7
+          ],
+          "b": [
+            82,
+            92
+          ]
+        },
+        "color_hsv": {
+          "h": 51,
+          "s": 100,
+          "v": 100
+        },
+        "color_hsv_range": {
+          "h": [
+            48,
+            54
+          ],
+          "s": [
+            65,
+            100
+          ],
+          "v": [
+            85,
+            100
+          ]
+        },
+        "refractive_index_n": 0.27,
+        "extinction_coefficient_k": 2.95,
+        "reflectance_percent": 95.0,
+        "reflectance_range": {
+          "min": 92,
+          "max": 98
+        },
+        "reflectance_by_wavelength": {
+          "400nm": 38,
+          "500nm": 47,
+          "600nm": 83,
+          "700nm": 95
+        },
+        "anisotropy": 0.05,
+        "sss_index": 0.0,
+        "metallic_index_min": 0.85
+      },
+      "texture_properties": {
+        "surface": "smooth",
+        "striations": false,
+        "fracture": "hackly",
+        "cleavage": "none"
+      },
+      "morphology": {
+        "typical_forms": [
+          "nuggets",
+          "flakes",
+          "dendritic",
+          "crystalline"
+        ],
+        "circularity": {
+          "min": 0.6,
+          "max": 0.95
+        },
+        "typical_size_mm": {
+          "min": 0.01,
+          "max": 100
+        },
+        "malleability": "very_high",
+        "ductility": "very_high"
+      },
+      "geological_context": {
+        "environments": [
+          "hydrothermal_veins",
+          "placer_deposits",
+          "epithermal",
+          "orogenic"
+        ],
+        "associated_minerals": [
+          "quartz",
+          "pyrite",
+          "arsenopyrite",
+          "sphalerite",
+          "galena",
+          "chalcopyrite"
+        ],
+        "host_rocks": [
+          "quartz_veins",
+          "schist",
+          "slate",
+          "granodiorite"
+        ],
+        "weathering": "resistant"
+      },
+      "vs_pyrite": {
+        "delta_e_lab": 22.8,
+        "saturation_diff": "+10%",
+        "bg_ratio_diff": "-0.53",
+        "metallic_index_diff": "+0.20",
+        "fresnel_reflectance_diff": "+41%",
+        "anisotropy_diff": "-0.15",
+        "circularity_diff": "+0.15",
+        "has_striations": false,
+        "highlight_pattern": "1-2_central",
+        "sss_diff": "-0.05",
+        "rugosity_diff": "-0.15",
+        "discrimination_confidence": 99.9
+      },
+      "purity_grades": {
+        "24K": {
+          "percent": 99.9,
+          "brightness": ">95%",
+          "color": "deep_yellow"
+        },
+        "22K": {
+          "percent": 91.7,
+          "brightness": "90-95%",
+          "color": "yellow"
+        },
+        "18K": {
+          "percent": 75.0,
+          "brightness": "85-90%",
+          "color": "yellow_pale"
+        },
+        "14K": {
+          "percent": 58.3,
+          "brightness": "80-85%",
+          "color": "light_yellow"
+        },
+        "10K": {
+          "percent": 41.7,
+          "brightness": "75-80%",
+          "color": "pale_yellow"
+        }
+      },
+      "economic": {
+        "value_usd_per_gram": 60.0,
+        "primary_uses": [
+          "jewelry",
+          "electronics",
+          "investment",
+          "dental"
+        ],
+        "global_production_tonnes_per_year": 3000
+      },
+      "analysis_settings": {
+        "confidence_threshold_min": 85,
+        "recommended_lighting": "diffuse_white_6500K",
+        "magnification_range": "10x-100x",
+        "sample_preparation": "clean_dry_surface"
+      }
+    },
+    {
+      "symbol": "Ag",
+      "name": "Prata",
+      "name_en": "Silver",
+      "category": "precious_metals",
+      "formula": "Ag",
+      "atomic_number": 47,
+      "density_g_cm3": 10.5,
+      "hardness_mohs": 2.5,
+      "crystal_system": "cubic",
+      "luster": "metallic",
+      "streak": "silver-white",
+      "opacity": "opaque",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 192,
+          "g": 192,
+          "b": 192
+        },
+        "color_rgb_range": {
+          "r": [
+            180,
+            210
+          ],
+          "g": [
+            180,
+            210
+          ],
+          "b": [
+            180,
+            210
+          ]
+        },
+        "color_lab": {
+          "l": 80.0,
+          "a": 0.0,
+          "b": 0.0
+        },
+        "color_lab_range": {
+          "l": [
+            75,
+            85
+          ],
+          "a": [
+            -5,
+            5
+          ],
+          "b": [
+            -5,
+            5
+          ]
+        },
+        "color_hsv": {
+          "h": 0,
+          "s": 0,
+          "v": 75
+        },
+        "color_hsv_range": {
+          "h": [
+            0,
+            360
+          ],
+          "s": [
+            0,
+            10
+          ],
+          "v": [
+            70,
+            85
+          ]
+        },
+        "refractive_index_n": 0.13,
+        "extinction_coefficient_k": 3.58,
+        "reflectance_percent": 97.0,
+        "reflectance_range": {
+          "min": 95,
+          "max": 99
+        },
+        "anisotropy": 0.03,
+        "sss_index": 0.0,
+        "metallic_index_min": 0.9
+      },
+      "texture_properties": {
+        "surface": "smooth",
+        "striations": false,
+        "fracture": "hackly",
+        "cleavage": "none"
+      },
+      "morphology": {
+        "typical_forms": [
+          "wires",
+          "dendritic",
+          "massive",
+          "crystalline"
+        ],
+        "circularity": {
+          "min": 0.5,
+          "max": 0.9
+        },
+        "malleability": "very_high",
+        "ductility": "very_high"
+      },
+      "geological_context": {
+        "environments": [
+          "hydrothermal_veins",
+          "epithermal",
+          "native_deposits"
+        ],
+        "associated_minerals": [
+          "galena",
+          "argentite",
+          "proustite"
+        ],
+        "weathering": "tarnishes_to_black"
+      },
+      "economic": {
+        "value_usd_per_gram": 0.75,
+        "primary_uses": [
+          "jewelry",
+          "photography",
+          "electronics",
+          "coins"
+        ],
+        "global_production_tonnes_per_year": 27000
+      }
+    },
+    {
+      "symbol": "Pt",
+      "name": "Platina",
+      "name_en": "Platinum",
+      "category": "pgm",
+      "formula": "Pt",
+      "atomic_number": 78,
+      "density_g_cm3": 21.45,
+      "hardness_mohs": 4.0,
+      "crystal_system": "cubic",
+      "luster": "metallic",
+      "streak": "silver-white",
+      "opacity": "opaque",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 170,
+          "g": 169,
+          "b": 173
+        },
+        "refractive_index_n": 2.08,
+        "extinction_coefficient_k": 4.18,
+        "reflectance_percent": 71.0,
+        "anisotropy": 0.02,
+        "sss_index": 0.0,
+        "metallic_index_min": 0.82
+      },
+      "geological_context": {
+        "environments": [
+          "ultramafic_intrusions",
+          "placer_deposits"
+        ],
+        "associated_minerals": [
+          "chromite",
+          "olivine",
+          "magnetite"
+        ],
+        "indicator_minerals": [
+          "chromite"
+        ]
+      },
+      "economic": {
+        "value_usd_per_gram": 30.0,
+        "primary_uses": [
+          "catalytic_converters",
+          "jewelry",
+          "medical"
+        ],
+        "rarity": "very_rare"
+      }
+    },
+    {
+      "symbol": "Pd",
+      "name": "Paládio",
+      "name_en": "Palladium",
+      "category": "pgm",
+      "formula": "Pd",
+      "atomic_number": 46,
+      "density_g_cm3": 12.02,
+      "hardness_mohs": 4.8,
+      "crystal_system": "cubic",
+      "luster": "metallic",
+      "optical_properties": {
+        "reflectance_percent": 72.0,
+        "metallic_index_min": 0.8
+      },
+      "economic": {
+        "value_usd_per_gram": 48.0
+      }
+    },
+    {
+      "symbol": "Rh",
+      "name": "Ródio",
+      "name_en": "Rhodium",
+      "category": "pgm",
+      "formula": "Rh",
+      "atomic_number": 45,
+      "density_g_cm3": 12.41,
+      "hardness_mohs": 6.0,
+      "crystal_system": "cubic",
+      "luster": "metallic",
+      "optical_properties": {
+        "reflectance_percent": 80.0
+      },
+      "economic": {
+        "value_usd_per_gram": 150.0
+      }
+    },
+    {
+      "symbol": "Ru",
+      "name": "Rutênio",
+      "name_en": "Ruthenium",
+      "category": "pgm",
+      "formula": "Ru",
+      "atomic_number": 44,
+      "density_g_cm3": 12.37,
+      "hardness_mohs": 6.5,
+      "crystal_system": "hexagonal",
+      "luster": "metallic"
+    },
+    {
+      "symbol": "Ir",
+      "name": "Irídio",
+      "name_en": "Iridium",
+      "category": "pgm",
+      "formula": "Ir",
+      "atomic_number": 77,
+      "density_g_cm3": 22.56,
+      "hardness_mohs": 6.5,
+      "crystal_system": "cubic",
+      "luster": "metallic"
+    },
+    {
+      "symbol": "Os",
+      "name": "Ósmio",
+      "name_en": "Osmium",
+      "category": "pgm",
+      "formula": "Os",
+      "atomic_number": 76,
+      "density_g_cm3": 22.59,
+      "hardness_mohs": 7.0,
+      "crystal_system": "hexagonal",
+      "luster": "metallic"
+    },
+    {
+      "symbol": "Cu",
+      "name": "Cobre",
+      "name_en": "Copper",
+      "category": "base_metals",
+      "formula": "Cu",
+      "atomic_number": 29,
+      "density_g_cm3": 8.96,
+      "hardness_mohs": 2.5,
+      "crystal_system": "cubic",
+      "luster": "metallic",
+      "opacity": "opaque",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 184,
+          "g": 115,
+          "b": 51
+        },
+        "refractive_index_n": 0.62,
+        "extinction_coefficient_k": 2.63,
+        "reflectance_percent": 73.0,
+        "anisotropy": 0.08,
+        "sss_index": 0.0
+      },
+      "geological_context": {
+        "environments": [
+          "porphyry",
+          "vms",
+          "sediment_hosted"
+        ],
+        "associated_minerals": [
+          "chalcopyrite",
+          "bornite",
+          "malachite"
+        ]
+      },
+      "economic": {
+        "value_usd_per_gram": 0.009,
+        "primary_uses": [
+          "electrical",
+          "construction",
+          "alloys"
+        ]
+      }
+    },
+    {
+      "symbol": "Fe",
+      "name": "Ferro",
+      "name_en": "Iron",
+      "category": "base_metals",
+      "formula": "Fe",
+      "atomic_number": 26,
+      "density_g_cm3": 7.87,
+      "hardness_mohs": 4.0,
+      "crystal_system": "cubic",
+      "luster": "metallic",
+      "magnetic": true
+    },
+    {
+      "symbol": "Pb",
+      "name": "Chumbo",
+      "name_en": "Lead",
+      "category": "base_metals",
+      "formula": "Pb",
+      "atomic_number": 82,
+      "density_g_cm3": 11.34,
+      "hardness_mohs": 1.5,
+      "crystal_system": "cubic",
+      "luster": "metallic"
+    },
+    {
+      "symbol": "Zn",
+      "name": "Zinco",
+      "name_en": "Zinc",
+      "category": "base_metals",
+      "formula": "Zn",
+      "atomic_number": 30,
+      "density_g_cm3": 7.14,
+      "hardness_mohs": 2.5,
+      "crystal_system": "hexagonal",
+      "luster": "metallic"
+    },
+    {
+      "symbol": "Ni",
+      "name": "Níquel",
+      "name_en": "Nickel",
+      "category": "base_metals",
+      "formula": "Ni",
+      "atomic_number": 28,
+      "density_g_cm3": 8.91,
+      "hardness_mohs": 4.0,
+      "crystal_system": "cubic",
+      "luster": "metallic",
+      "magnetic": true
+    },
+    {
+      "symbol": "Co",
+      "name": "Cobalto",
+      "name_en": "Cobalt",
+      "category": "base_metals",
+      "formula": "Co",
+      "atomic_number": 27,
+      "density_g_cm3": 8.9,
+      "hardness_mohs": 5.0,
+      "crystal_system": "hexagonal",
+      "luster": "metallic"
+    },
+    {
+      "symbol": "Sn",
+      "name": "Estanho",
+      "name_en": "Tin",
+      "category": "base_metals",
+      "formula": "Sn",
+      "atomic_number": 50,
+      "density_g_cm3": 7.31,
+      "hardness_mohs": 1.5,
+      "crystal_system": "tetragonal",
+      "luster": "metallic"
+    },
+    {
+      "symbol": "W",
+      "name": "Tungstênio",
+      "name_en": "Tungsten",
+      "category": "base_metals",
+      "formula": "W",
+      "atomic_number": 74,
+      "density_g_cm3": 19.25,
+      "hardness_mohs": 7.5,
+      "crystal_system": "cubic",
+      "luster": "metallic"
+    },
+    {
+      "symbol": "Mo",
+      "name": "Molibdênio",
+      "name_en": "Molybdenum",
+      "category": "base_metals",
+      "formula": "Mo",
+      "atomic_number": 42,
+      "density_g_cm3": 10.28,
+      "hardness_mohs": 5.5,
+      "crystal_system": "cubic",
+      "luster": "metallic"
+    },
+    {
+      "symbol": "Mn",
+      "name": "Manganês",
+      "name_en": "Manganese",
+      "category": "base_metals",
+      "formula": "Mn",
+      "atomic_number": 25,
+      "density_g_cm3": 7.21,
+      "hardness_mohs": 6.0,
+      "crystal_system": "cubic",
+      "luster": "metallic"
+    },
+    {
+      "symbol": "FeS2",
+      "name": "Pirita",
+      "name_en": "Pyrite",
+      "category": "sulfides",
+      "formula": "FeS2",
+      "density_g_cm3": 5.02,
+      "hardness_mohs": 6.0,
+      "crystal_system": "cubic",
+      "luster": "metallic",
+      "streak": "greenish-black",
+      "opacity": "opaque",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 180,
+          "g": 150,
+          "b": 80
+        },
+        "color_rgb_range": {
+          "r": [
+            160,
+            200
+          ],
+          "g": [
+            140,
+            170
+          ],
+          "b": [
+            60,
+            100
+          ]
+        },
+        "color_lab": {
+          "l": 75.0,
+          "a": 8.5,
+          "b": 65.0
+        },
+        "color_lab_range": {
+          "l": [
+            70,
+            80
+          ],
+          "a": [
+            3,
+            14
+          ],
+          "b": [
+            58,
+            72
+          ]
+        },
+        "color_hsv": {
+          "h": 57,
+          "s": 55,
+          "v": 70
+        },
+        "color_hsv_range": {
+          "h": [
+            55,
+            60
+          ],
+          "s": [
+            45,
+            60
+          ],
+          "v": [
+            70,
+            85
+          ]
+        },
+        "refractive_index_n": 1.45,
+        "extinction_coefficient_k": 0.1,
+        "reflectance_percent": 54.0,
+        "reflectance_range": {
+          "min": 50,
+          "max": 58
+        },
+        "anisotropy": 0.25,
+        "sss_index": 0.08,
+        "metallic_index_min": 0.65
+      },
+      "texture_properties": {
+        "surface": "striated",
+        "striations": true,
+        "striation_direction": "parallel_on_faces",
+        "fracture": "conchoidal",
+        "cleavage": "poor_cubic"
+      },
+      "morphology": {
+        "typical_forms": [
+          "cubic",
+          "pyritohedral",
+          "octahedral"
+        ],
+        "circularity": {
+          "min": 0.3,
+          "max": 0.5
+        },
+        "face_angles": [
+          90
+        ],
+        "cubic_faces": true,
+        "malleability": "brittle"
+      },
+      "geological_context": {
+        "environments": [
+          "hydrothermal_veins",
+          "sedimentary",
+          "metamorphic",
+          "igneous"
+        ],
+        "associated_minerals": [
+          "quartz",
+          "calcite",
+          "sphalerite",
+          "chalcopyrite"
+        ],
+        "indicator_of": [
+          "gold_deposits_when_arsenian"
+        ],
+        "weathering": "oxidizes_to_iron_oxides"
+      },
+      "vs_gold": {
+        "delta_e_lab": -22.8,
+        "commonly_confused": true,
+        "nickname": "fools_gold",
+        "key_differences": [
+          "harder (6 vs 2.5)",
+          "lighter (5.0 vs 19.3 g/cm3)",
+          "cubic_striations_present",
+          "greenish_black_streak_vs_golden",
+          "brittle_vs_malleable",
+          "lower_reflectance (54% vs 95%)",
+          "higher_anisotropy (0.25 vs 0.05)"
+        ]
+      },
+      "economic": {
+        "value": "low",
+        "primary_uses": [
+          "sulfuric_acid_production",
+          "indicator_mineral"
+        ],
+        "often_associated_with": "gold_deposits"
+      }
+    },
+    {
+      "symbol": "CuFeS2",
+      "name": "Calcopirita",
+      "name_en": "Chalcopyrite",
+      "category": "sulfides",
+      "formula": "CuFeS2",
+      "density_g_cm3": 4.2,
+      "hardness_mohs": 3.5,
+      "crystal_system": "tetragonal",
+      "luster": "metallic",
+      "streak": "greenish-black",
+      "opacity": "opaque",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 183,
+          "g": 158,
+          "b": 54
+        },
+        "reflectance_percent": 45.0,
+        "anisotropy": 0.15,
+        "tarnish": "iridescent_purple_blue"
+      },
+      "geological_context": {
+        "environments": [
+          "porphyry",
+          "vms",
+          "skarn"
+        ],
+        "primary_copper_ore": true
+      }
+    },
+    {
+      "symbol": "PbS",
+      "name": "Galena",
+      "name_en": "Galena",
+      "category": "sulfides",
+      "formula": "PbS",
+      "density_g_cm3": 7.5,
+      "hardness_mohs": 2.5,
+      "crystal_system": "cubic",
+      "luster": "metallic",
+      "streak": "lead-gray",
+      "cleavage": "perfect_cubic",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 92,
+          "g": 95,
+          "b": 102
+        },
+        "reflectance_percent": 43.0
+      }
+    },
+    {
+      "symbol": "ZnS",
+      "name": "Esfalerita",
+      "name_en": "Sphalerite",
+      "category": "sulfides",
+      "formula": "ZnS",
+      "density_g_cm3": 4.0,
+      "hardness_mohs": 3.5,
+      "crystal_system": "cubic",
+      "luster": "resinous_to_submetallic",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 139,
+          "g": 90,
+          "b": 43
+        }
+      }
+    },
+    {
+      "symbol": "FeAsS",
+      "name": "Arsenopirita",
+      "name_en": "Arsenopyrite",
+      "category": "sulfides",
+      "formula": "FeAsS",
+      "density_g_cm3": 6.1,
+      "hardness_mohs": 5.5,
+      "crystal_system": "orthorhombic",
+      "luster": "metallic",
+      "geological_context": {
+        "indicator_of": [
+          "gold_deposits"
+        ]
+      }
+    },
+    {
+      "symbol": "Fe1-xS",
+      "name": "Pirrotita",
+      "name_en": "Pyrrhotite",
+      "category": "sulfides",
+      "formula": "Fe(1-x)S",
+      "density_g_cm3": 4.6,
+      "hardness_mohs": 3.5,
+      "crystal_system": "hexagonal",
+      "luster": "metallic",
+      "magnetic": true
+    },
+    {
+      "symbol": "(Fe,Ni)9S8",
+      "name": "Pentlandita",
+      "name_en": "Pentlandite",
+      "category": "sulfides",
+      "formula": "(Fe,Ni)9S8",
+      "density_g_cm3": 5.0,
+      "hardness_mohs": 3.5,
+      "crystal_system": "cubic",
+      "luster": "metallic",
+      "primary_nickel_ore": true
+    },
+    {
+      "symbol": "Cu5FeS4",
+      "name": "Bornita",
+      "name_en": "Bornite",
+      "category": "sulfides",
+      "formula": "Cu5FeS4",
+      "density_g_cm3": 5.1,
+      "hardness_mohs": 3.0,
+      "crystal_system": "orthorhombic",
+      "luster": "metallic",
+      "tarnish": "peacock_colors",
+      "nickname": "peacock_ore"
+    },
+    {
+      "symbol": "MoS2",
+      "name": "Molibdenita",
+      "name_en": "Molybdenite",
+      "category": "sulfides",
+      "formula": "MoS2",
+      "density_g_cm3": 4.7,
+      "hardness_mohs": 1.0,
+      "crystal_system": "hexagonal",
+      "luster": "metallic",
+      "cleavage": "perfect_basal"
+    },
+    {
+      "symbol": "Cu2S",
+      "name": "Calcocita",
+      "name_en": "Chalcocite",
+      "category": "sulfides",
+      "formula": "Cu2S",
+      "density_g_cm3": 5.8,
+      "hardness_mohs": 2.5,
+      "crystal_system": "orthorhombic",
+      "luster": "metallic"
+    },
+    {
+      "symbol": "CuS",
+      "name": "Covelita",
+      "name_en": "Covellite",
+      "category": "sulfides",
+      "formula": "CuS",
+      "density_g_cm3": 4.7,
+      "hardness_mohs": 1.5,
+      "crystal_system": "hexagonal",
+      "luster": "submetallic",
+      "color": "indigo_blue"
+    },
+    {
+      "symbol": "FeS2",
+      "name": "Marcassita",
+      "name_en": "Marcasite",
+      "category": "sulfides",
+      "formula": "FeS2",
+      "density_g_cm3": 4.9,
+      "hardness_mohs": 6.0,
+      "crystal_system": "orthorhombic",
+      "luster": "metallic",
+      "note": "polymorph_of_pyrite"
+    },
+    {
+      "symbol": "Fe3O4",
+      "name": "Magnetita",
+      "name_en": "Magnetite",
+      "category": "oxides",
+      "formula": "Fe3O4",
+      "density_g_cm3": 5.2,
+      "hardness_mohs": 5.5,
+      "crystal_system": "cubic",
+      "luster": "metallic",
+      "streak": "black",
+      "magnetic": "strongly_magnetic",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 25,
+          "g": 25,
+          "b": 25
+        },
+        "reflectance_percent": 21.0,
+        "opacity": "opaque"
+      }
+    },
+    {
+      "symbol": "Fe2O3",
+      "name": "Hematita",
+      "name_en": "Hematite",
+      "category": "oxides",
+      "formula": "Fe2O3",
+      "density_g_cm3": 5.3,
+      "hardness_mohs": 5.5,
+      "crystal_system": "trigonal",
+      "luster": "metallic_to_dull",
+      "streak": "red_brown",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 112,
+          "g": 66,
+          "b": 60
+        }
+      }
+    },
+    {
+      "symbol": "FeCr2O4",
+      "name": "Cromita",
+      "name_en": "Chromite",
+      "category": "oxides",
+      "formula": "FeCr2O4",
+      "density_g_cm3": 4.8,
+      "hardness_mohs": 5.5,
+      "crystal_system": "cubic",
+      "luster": "metallic",
+      "geological_context": {
+        "indicator_of": [
+          "pgm_deposits"
+        ]
+      }
+    },
+    {
+      "symbol": "FeTiO3",
+      "name": "Ilmenita",
+      "name_en": "Ilmenite",
+      "category": "oxides",
+      "formula": "FeTiO3",
+      "density_g_cm3": 4.7,
+      "hardness_mohs": 5.5,
+      "crystal_system": "trigonal",
+      "luster": "metallic_to_submetallic"
+    },
+    {
+      "symbol": "TiO2",
+      "name": "Rutilo",
+      "name_en": "Rutile",
+      "category": "oxides",
+      "formula": "TiO2",
+      "density_g_cm3": 4.2,
+      "hardness_mohs": 6.0,
+      "crystal_system": "tetragonal",
+      "luster": "adamantine_to_metallic"
+    },
+    {
+      "symbol": "SnO2",
+      "name": "Cassiterita",
+      "name_en": "Cassiterite",
+      "category": "oxides",
+      "formula": "SnO2",
+      "density_g_cm3": 7.0,
+      "hardness_mohs": 6.5,
+      "crystal_system": "tetragonal",
+      "luster": "adamantine",
+      "primary_tin_ore": true
+    },
+    {
+      "symbol": "(Fe,Mn)WO4",
+      "name": "Wolframita",
+      "name_en": "Wolframite",
+      "category": "oxides",
+      "formula": "(Fe,Mn)WO4",
+      "density_g_cm3": 7.5,
+      "hardness_mohs": 4.5,
+      "crystal_system": "monoclinic",
+      "luster": "submetallic"
+    },
+    {
+      "symbol": "FeOOH",
+      "name": "Goethita",
+      "name_en": "Goethite",
+      "category": "oxides",
+      "formula": "FeO(OH)",
+      "density_g_cm3": 4.3,
+      "hardness_mohs": 5.0,
+      "crystal_system": "orthorhombic",
+      "luster": "adamantine_to_dull",
+      "streak": "yellowish_brown"
+    },
+    {
+      "symbol": "SiO2",
+      "name": "Quartzo",
+      "name_en": "Quartz",
+      "category": "silicates",
+      "formula": "SiO2",
+      "density_g_cm3": 2.65,
+      "hardness_mohs": 7.0,
+      "crystal_system": "trigonal",
+      "luster": "vitreous",
+      "streak": "white",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        },
+        "refractive_index_n": 1.544,
+        "sss_index": 0.4,
+        "transparency": "transparent_to_translucent"
+      },
+      "varieties": [
+        "milky",
+        "smoky",
+        "rose",
+        "amethyst",
+        "citrine",
+        "clear",
+        "chalcedony",
+        "agate"
+      ],
+      "geological_context": {
+        "most_common_mineral": true,
+        "associated_with": [
+          "gold",
+          "silver",
+          "most_ore_deposits"
+        ]
+      }
+    },
+    {
+      "symbol": "(Mg,Fe)2SiO4",
+      "name": "Olivina",
+      "name_en": "Olivine",
+      "category": "silicates",
+      "formula": "(Mg,Fe)2SiO4",
+      "density_g_cm3": 3.3,
+      "hardness_mohs": 6.5,
+      "crystal_system": "orthorhombic",
+      "luster": "vitreous",
+      "color": "olive_green",
+      "geological_context": {
+        "indicator_of": [
+          "pgm_deposits",
+          "ultramafic_rocks"
+        ]
+      }
+    },
+    {
+      "symbol": "Mg3Si2O5(OH)4",
+      "name": "Serpentina",
+      "name_en": "Serpentine",
+      "category": "silicates",
+      "formula": "Mg3Si2O5(OH)4",
+      "density_g_cm3": 2.6,
+      "hardness_mohs": 3.0,
+      "crystal_system": "monoclinic",
+      "luster": "greasy_to_waxy",
+      "color": "green"
+    },
+    {
+      "symbol": "KAlSi3O8",
+      "name": "Feldspato Ortoclásio",
+      "name_en": "Orthoclase Feldspar",
+      "category": "silicates",
+      "formula": "KAlSi3O8",
+      "density_g_cm3": 2.56,
+      "hardness_mohs": 6.0,
+      "crystal_system": "monoclinic",
+      "luster": "vitreous",
+      "color": "pink_white"
+    },
+    {
+      "symbol": "NaAlSi3O8-CaAl2Si2O8",
+      "name": "Feldspato Plagioclásio",
+      "name_en": "Plagioclase Feldspar",
+      "category": "silicates",
+      "formula": "NaAlSi3O8-CaAl2Si2O8",
+      "density_g_cm3": 2.65,
+      "hardness_mohs": 6.0,
+      "crystal_system": "triclinic",
+      "luster": "vitreous"
+    },
+    {
+      "symbol": "KAl2(AlSi3O10)(OH)2",
+      "name": "Mica Muscovita",
+      "name_en": "Muscovite Mica",
+      "category": "silicates",
+      "formula": "KAl2(AlSi3O10)(OH)2",
+      "density_g_cm3": 2.83,
+      "hardness_mohs": 2.5,
+      "crystal_system": "monoclinic",
+      "luster": "vitreous_to_pearly",
+      "cleavage": "perfect_basal"
+    },
+    {
+      "symbol": "K(Mg,Fe)3AlSi3O10(OH)2",
+      "name": "Mica Biotita",
+      "name_en": "Biotite Mica",
+      "category": "silicates",
+      "formula": "K(Mg,Fe)3AlSi3O10(OH)2",
+      "density_g_cm3": 3.1,
+      "hardness_mohs": 2.5,
+      "crystal_system": "monoclinic",
+      "luster": "vitreous",
+      "color": "black_brown"
+    },
+    {
+      "symbol": "Ca2(Mg,Fe)5Si8O22(OH)2",
+      "name": "Anfibólio Hornblenda",
+      "name_en": "Hornblende Amphibole",
+      "category": "silicates",
+      "formula": "Ca2(Mg,Fe)5Si8O22(OH)2",
+      "density_g_cm3": 3.2,
+      "hardness_mohs": 5.5,
+      "crystal_system": "monoclinic",
+      "luster": "vitreous",
+      "color": "dark_green_black"
+    },
+    {
+      "symbol": "(Ca,Mg,Fe)2Si2O6",
+      "name": "Piroxênio Augita",
+      "name_en": "Augite Pyroxene",
+      "category": "silicates",
+      "formula": "(Ca,Mg,Fe)2Si2O6",
+      "density_g_cm3": 3.4,
+      "hardness_mohs": 5.5,
+      "crystal_system": "monoclinic",
+      "luster": "vitreous",
+      "color": "dark_green_black"
+    },
+    {
+      "symbol": "X3Y2(SiO4)3",
+      "name": "Granada",
+      "name_en": "Garnet",
+      "category": "silicates",
+      "formula": "X3Y2(SiO4)3",
+      "density_g_cm3": 3.8,
+      "hardness_mohs": 6.5,
+      "crystal_system": "cubic",
+      "luster": "vitreous",
+      "color": "red_brown_green"
+    },
+    {
+      "symbol": "Complex_borosilicate",
+      "name": "Turmalina",
+      "name_en": "Tourmaline",
+      "category": "silicates",
+      "formula": "(Na,Ca)(Li,Mg,Al)(Al,Fe,Mn)6(BO3)3Si6O18(OH)4",
+      "density_g_cm3": 3.1,
+      "hardness_mohs": 7.0,
+      "crystal_system": "trigonal",
+      "luster": "vitreous"
+    },
+    {
+      "symbol": "Be3Al2Si6O18",
+      "name": "Berilo",
+      "name_en": "Beryl",
+      "category": "silicates",
+      "formula": "Be3Al2Si6O18",
+      "density_g_cm3": 2.7,
+      "hardness_mohs": 7.5,
+      "crystal_system": "hexagonal",
+      "luster": "vitreous",
+      "varieties": [
+        "emerald",
+        "aquamarine",
+        "morganite"
+      ]
+    },
+    {
+      "symbol": "Al2SiO4(F,OH)2",
+      "name": "Topázio",
+      "name_en": "Topaz",
+      "category": "silicates",
+      "formula": "Al2SiO4(F,OH)2",
+      "density_g_cm3": 3.5,
+      "hardness_mohs": 8.0,
+      "crystal_system": "orthorhombic",
+      "luster": "vitreous"
+    },
+    {
+      "symbol": "ZrSiO4",
+      "name": "Zircão",
+      "name_en": "Zircon",
+      "category": "silicates",
+      "formula": "ZrSiO4",
+      "density_g_cm3": 4.7,
+      "hardness_mohs": 7.5,
+      "crystal_system": "tetragonal",
+      "luster": "adamantine"
+    },
+    {
+      "symbol": "(Mg,Fe)3(Si,Al)4O10(OH)2·(Mg,Fe)3(OH)6",
+      "name": "Clorita",
+      "name_en": "Chlorite",
+      "category": "silicates",
+      "formula": "(Mg,Fe)3(Si,Al)4O10(OH)2·(Mg,Fe)3(OH)6",
+      "density_g_cm3": 2.9,
+      "hardness_mohs": 2.5,
+      "crystal_system": "monoclinic",
+      "luster": "vitreous_to_pearly",
+      "color": "green"
+    },
+    {
+      "symbol": "Mg3Si4O10(OH)2",
+      "name": "Talco",
+      "name_en": "Talc",
+      "category": "silicates",
+      "formula": "Mg3Si4O10(OH)2",
+      "density_g_cm3": 2.8,
+      "hardness_mohs": 1.0,
+      "crystal_system": "monoclinic",
+      "luster": "pearly_to_greasy",
+      "softest_mineral": true
+    },
+    {
+      "symbol": "Al2Si2O5(OH)4",
+      "name": "Caulinita",
+      "name_en": "Kaolinite",
+      "category": "silicates",
+      "formula": "Al2Si2O5(OH)4",
+      "density_g_cm3": 2.6,
+      "hardness_mohs": 2.0,
+      "crystal_system": "triclinic",
+      "luster": "earthy",
+      "color": "white"
+    },
+    {
+      "symbol": "KMg3AlSi3O10(OH)2",
+      "name": "Flogopita",
+      "name_en": "Phlogopite",
+      "category": "silicates",
+      "formula": "KMg3AlSi3O10(OH)2",
+      "density_g_cm3": 2.8,
+      "hardness_mohs": 2.5,
+      "crystal_system": "monoclinic",
+      "luster": "vitreous",
+      "color": "brown"
+    },
+    {
+      "symbol": "KAlSi3O8",
+      "name": "Microclina",
+      "name_en": "Microcline",
+      "category": "silicates",
+      "formula": "KAlSi3O8",
+      "density_g_cm3": 2.56,
+      "hardness_mohs": 6.0,
+      "crystal_system": "triclinic",
+      "luster": "vitreous",
+      "variety": "amazonite_green"
+    },
+    {
+      "symbol": "CaCO3",
+      "name": "Calcita",
+      "name_en": "Calcite",
+      "category": "carbonates",
+      "formula": "CaCO3",
+      "density_g_cm3": 2.71,
+      "hardness_mohs": 3.0,
+      "crystal_system": "trigonal",
+      "luster": "vitreous",
+      "cleavage": "perfect_rhombohedral",
+      "effervescence": "HCl"
+    },
+    {
+      "symbol": "CaMg(CO3)2",
+      "name": "Dolomita",
+      "name_en": "Dolomite",
+      "category": "carbonates",
+      "formula": "CaMg(CO3)2",
+      "density_g_cm3": 2.85,
+      "hardness_mohs": 3.5,
+      "crystal_system": "trigonal",
+      "luster": "vitreous"
+    },
+    {
+      "symbol": "FeCO3",
+      "name": "Siderita",
+      "name_en": "Siderite",
+      "category": "carbonates",
+      "formula": "FeCO3",
+      "density_g_cm3": 3.96,
+      "hardness_mohs": 4.0,
+      "crystal_system": "trigonal",
+      "luster": "vitreous",
+      "color": "brown"
+    },
+    {
+      "symbol": "MgCO3",
+      "name": "Magnesita",
+      "name_en": "Magnesite",
+      "category": "carbonates",
+      "formula": "MgCO3",
+      "density_g_cm3": 3.0,
+      "hardness_mohs": 3.5,
+      "crystal_system": "trigonal",
+      "luster": "vitreous",
+      "color": "white"
+    },
+    {
+      "symbol": "MnCO3",
+      "name": "Rodocrosita",
+      "name_en": "Rhodochrosite",
+      "category": "carbonates",
+      "formula": "MnCO3",
+      "density_g_cm3": 3.7,
+      "hardness_mohs": 3.5,
+      "crystal_system": "trigonal",
+      "luster": "vitreous",
+      "color": "pink"
+    },
+    {
+      "symbol": "NaCl",
+      "name": "Halita",
+      "name_en": "Halite",
+      "category": "halides",
+      "formula": "NaCl",
+      "density_g_cm3": 2.17,
+      "hardness_mohs": 2.5,
+      "crystal_system": "cubic",
+      "luster": "vitreous",
+      "taste": "salty",
+      "cleavage": "perfect_cubic"
+    },
+    {
+      "symbol": "CaF2",
+      "name": "Fluorita",
+      "name_en": "Fluorite",
+      "category": "halides",
+      "formula": "CaF2",
+      "density_g_cm3": 3.18,
+      "hardness_mohs": 4.0,
+      "crystal_system": "cubic",
+      "luster": "vitreous",
+      "cleavage": "perfect_octahedral",
+      "fluorescence": true
+    },
+    {
+      "symbol": "KCl",
+      "name": "Silvita",
+      "name_en": "Sylvite",
+      "category": "halides",
+      "formula": "KCl",
+      "density_g_cm3": 1.99,
+      "hardness_mohs": 2.0,
+      "crystal_system": "cubic",
+      "luster": "vitreous"
+    },
+    {
+      "symbol": "Ca5(PO4)3(F,Cl,OH)",
+      "name": "Apatita",
+      "name_en": "Apatite",
+      "category": "phosphates",
+      "formula": "Ca5(PO4)3(F,Cl,OH)",
+      "density_g_cm3": 3.2,
+      "hardness_mohs": 5.0,
+      "crystal_system": "hexagonal",
+      "luster": "vitreous"
+    },
+    {
+      "symbol": "(Ce,La,Nd,Th)PO4",
+      "name": "Monazita",
+      "name_en": "Monazite",
+      "category": "phosphates",
+      "formula": "(Ce,La,Nd,Th)PO4",
+      "density_g_cm3": 5.0,
+      "hardness_mohs": 5.0,
+      "crystal_system": "monoclinic",
+      "luster": "resinous",
+      "radioactive": true
+    },
+    {
+      "symbol": "YPO4",
+      "name": "Xenotímio",
+      "name_en": "Xenotime",
+      "category": "phosphates",
+      "formula": "YPO4",
+      "density_g_cm3": 4.5,
+      "hardness_mohs": 4.5,
+      "crystal_system": "tetragonal",
+      "luster": "vitreous"
+    },
+    {
+      "symbol": "S",
+      "name": "Enxofre",
+      "name_en": "Sulfur",
+      "category": "native_elements",
+      "formula": "S",
+      "density_g_cm3": 2.07,
+      "hardness_mohs": 1.5,
+      "crystal_system": "orthorhombic",
+      "luster": "resinous",
+      "color": "yellow"
+    },
+    {
+      "symbol": "C",
+      "name": "Grafita",
+      "name_en": "Graphite",
+      "category": "native_elements",
+      "formula": "C",
+      "density_g_cm3": 2.23,
+      "hardness_mohs": 1.0,
+      "crystal_system": "hexagonal",
+      "luster": "metallic",
+      "color": "black",
+      "cleavage": "perfect_basal"
+    },
+    {
+      "symbol": "C",
+      "name": "Diamante",
+      "name_en": "Diamond",
+      "category": "native_elements",
+      "formula": "C",
+      "density_g_cm3": 3.52,
+      "hardness_mohs": 10.0,
+      "crystal_system": "cubic",
+      "luster": "adamantine",
+      "refractive_index": 2.42,
+      "hardest_natural_material": true
+    },
+    {
+      "symbol": "Bi",
+      "name": "Bismuto",
+      "name_en": "Bismuth",
+      "category": "native_elements",
+      "formula": "Bi",
+      "density_g_cm3": 9.78,
+      "hardness_mohs": 2.5,
+      "crystal_system": "trigonal",
+      "luster": "metallic"
+    },
+    {
+      "symbol": "Al2O3:Cr",
+      "name": "Rubi",
+      "name_en": "Ruby",
+      "category": "gems",
+      "formula": "Al2O3",
+      "variety_of": "corundum",
+      "density_g_cm3": 4.0,
+      "hardness_mohs": 9.0,
+      "crystal_system": "trigonal",
+      "luster": "vitreous",
+      "color": "red",
+      "chromophore": "chromium"
+    },
+    {
+      "symbol": "Al2O3",
+      "name": "Safira",
+      "name_en": "Sapphire",
+      "category": "gems",
+      "formula": "Al2O3",
+      "variety_of": "corundum",
+      "density_g_cm3": 4.0,
+      "hardness_mohs": 9.0,
+      "crystal_system": "trigonal",
+      "luster": "vitreous",
+      "color": "blue_various"
+    },
+    {
+      "symbol": "Be3Al2Si6O18:Cr,V",
+      "name": "Esmeralda",
+      "name_en": "Emerald",
+      "category": "gems",
+      "formula": "Be3Al2Si6O18",
+      "variety_of": "beryl",
+      "density_g_cm3": 2.7,
+      "hardness_mohs": 7.5,
+      "color": "green",
+      "chromophore": "chromium_vanadium"
+    },
+    {
+      "symbol": "Be3Al2Si6O18:Fe",
+      "name": "Água-marinha",
+      "name_en": "Aquamarine",
+      "category": "gems",
+      "formula": "Be3Al2Si6O18",
+      "variety_of": "beryl",
+      "density_g_cm3": 2.7,
+      "hardness_mohs": 7.5,
+      "color": "blue_green"
+    },
+    {
+      "symbol": "SiO2:Fe",
+      "name": "Ametista",
+      "name_en": "Amethyst",
+      "category": "gems",
+      "formula": "SiO2",
+      "variety_of": "quartz",
+      "density_g_cm3": 2.65,
+      "hardness_mohs": 7.0,
+      "color": "purple"
+    },
+    {
+      "symbol": "SiO2:Fe",
+      "name": "Citrino",
+      "name_en": "Citrine",
+      "category": "gems",
+      "formula": "SiO2",
+      "variety_of": "quartz",
+      "density_g_cm3": 2.65,
+      "hardness_mohs": 7.0,
+      "color": "yellow_orange"
+    },
+    {
+      "symbol": "(Mg,Fe)2SiO4",
+      "name": "Peridoto",
+      "name_en": "Peridot",
+      "category": "gems",
+      "formula": "(Mg,Fe)2SiO4",
+      "variety_of": "olivine",
+      "density_g_cm3": 3.3,
+      "hardness_mohs": 6.5,
+      "color": "olive_green"
+    },
+    {
+      "symbol": "SiO2·nH2O",
+      "name": "Opala",
+      "name_en": "Opal",
+      "category": "gems",
+      "formula": "SiO2·nH2O",
+      "density_g_cm3": 2.1,
+      "hardness_mohs": 5.5,
+      "luster": "vitreous",
+      "play_of_color": true,
+      "amorphous": true
+    },
+    {
+      "symbol": "Ag2S",
+      "name": "Argentita",
+      "name_en": "Argentite",
+      "category": "sulfides",
+      "formula": "Ag2S",
+      "density_g_cm3": 7.2,
+      "hardness_mohs": 2.5,
+      "crystal_system": "cubic",
+      "luster": "metallic",
+      "streak": "black",
+      "opacity": "opaque",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 64,
+          "g": 64,
+          "b": 64
+        },
+        "reflectance_percent": 35.0
+      },
+      "geological_context": {
+        "environments": [
+          "hydrothermal_veins",
+          "epithermal"
+        ],
+        "associated_minerals": [
+          "native_silver",
+          "proustite",
+          "pyrargyrite"
+        ],
+        "primary_silver_ore": true
+      },
+      "economic": {
+        "value": "high",
+        "primary_uses": [
+          "silver_extraction"
+        ],
+        "important_silver_ore": true
+      }
+    },
+    {
+      "symbol": "Cu3AsS4",
+      "name": "Enargita",
+      "name_en": "Enargite",
+      "category": "sulfides",
+      "formula": "Cu3AsS4",
+      "density_g_cm3": 4.5,
+      "hardness_mohs": 3.0,
+      "crystal_system": "orthorhombic",
+      "luster": "metallic",
+      "streak": "black",
+      "opacity": "opaque",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 85,
+          "g": 85,
+          "b": 88
+        },
+        "reflectance_percent": 30.0
+      },
+      "geological_context": {
+        "environments": [
+          "epithermal",
+          "porphyry"
+        ],
+        "associated_minerals": [
+          "pyrite",
+          "chalcopyrite",
+          "quartz"
+        ]
+      },
+      "economic": {
+        "value": "moderate",
+        "primary_uses": [
+          "copper_ore"
+        ],
+        "arsenic_content": "high"
+      }
+    },
+    {
+      "symbol": "PbMoO4",
+      "name": "Wulfenita",
+      "name_en": "Wulfenite",
+      "category": "oxides",
+      "formula": "PbMoO4",
+      "density_g_cm3": 6.8,
+      "hardness_mohs": 3.0,
+      "crystal_system": "tetragonal",
+      "luster": "adamantine",
+      "streak": "white",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 255,
+          "g": 165,
+          "b": 0
+        },
+        "transparency": "transparent_to_translucent"
+      },
+      "geological_context": {
+        "environments": [
+          "oxidized_lead_deposits"
+        ],
+        "associated_minerals": [
+          "cerussite",
+          "anglesite",
+          "vanadinite"
+        ],
+        "secondary_mineral": true
+      },
+      "economic": {
+        "value": "low",
+        "primary_uses": [
+          "mineral_specimen"
+        ],
+        "molybdenum_indicator": true
+      }
+    },
+    {
+      "symbol": "ZnCO3",
+      "name": "Smithsonita",
+      "name_en": "Smithsonite",
+      "category": "carbonates",
+      "formula": "ZnCO3",
+      "density_g_cm3": 4.4,
+      "hardness_mohs": 4.5,
+      "crystal_system": "trigonal",
+      "luster": "vitreous_to_pearly",
+      "streak": "white",
+      "optical_properties": {
+        "color_rgb": {
+          "r": 150,
+          "g": 200,
+          "b": 150
+        },
+        "transparency": "translucent"
+      },
+      "geological_context": {
+        "environments": [
+          "oxidized_zinc_deposits"
+        ],
+        "associated_minerals": [
+          "hemimorphite",
+          "cerussite",
+          "malachite"
+        ],
+        "secondary_mineral": true
+      },
+      "economic": {
+        "value": "moderate",
+        "primary_uses": [
+          "zinc_ore"
+        ],
+        "secondary_zinc_ore": true
+      }
+    }
+  ]
+}
