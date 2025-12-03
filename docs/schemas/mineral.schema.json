@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft-07/schema#",
   "$id": "https://trilhagold.com/schemas/mineral.schema.json",
   "title": "Mineral",
   "description": "JSON Schema for mineral data in TGC METAL ANALÍTICO ULTRA system",
@@ -451,7 +451,66 @@
     "note": {
       "type": "string",
       "description": "Additional notes"
+    },
+    "hardest_natural_material": {
+      "type": "boolean",
+      "description": "Whether this is the hardest natural material"
+    },
+    "softest_mineral": {
+      "type": "boolean",
+      "description": "Whether this is the softest mineral"
+    },
+    "most_common_mineral": {
+      "type": "boolean",
+      "description": "Whether this is the most common mineral"
+    },
+    "play_of_color": {
+      "type": "boolean",
+      "description": "Whether it displays play of color"
+    },
+    "amorphous": {
+      "type": "boolean",
+      "description": "Whether the mineral is amorphous"
+    },
+    "taste": {
+      "type": "string",
+      "description": "Taste characteristic (for soluble minerals)"
+    },
+    "effervescence": {
+      "type": "string",
+      "description": "Reaction with acid"
+    },
+    "cleavage": {
+      "type": "string",
+      "description": "Cleavage properties"
+    },
+    "primary_copper_ore": {
+      "type": "boolean"
+    },
+    "primary_nickel_ore": {
+      "type": "boolean"
+    },
+    "primary_tin_ore": {
+      "type": "boolean"
+    },
+    "primary_silver_ore": {
+      "type": "boolean"
+    },
+    "important_silver_ore": {
+      "type": "boolean"
+    },
+    "arsenic_content": {
+      "type": "string"
+    },
+    "secondary_mineral": {
+      "type": "boolean"
+    },
+    "molybdenum_indicator": {
+      "type": "boolean"
+    },
+    "secondary_zinc_ore": {
+      "type": "boolean"
     }
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }

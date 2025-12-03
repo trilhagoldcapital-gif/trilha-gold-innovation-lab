@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft-07/schema#",
   "$id": "https://trilhagold.com/schemas/session.schema.json",
   "title": "Analysis Session",
   "description": "JSON Schema for analysis session data in TGC METAL ANALÍTICO ULTRA system",
