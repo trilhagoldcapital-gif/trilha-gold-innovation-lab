@@ -1,0 +1,381 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://trilhagold.com/schemas/session.schema.json",
+  "title": "Analysis Session",
+  "description": "JSON Schema for analysis session data in TGC METAL ANALÍTICO ULTRA system",
+  "type": "object",
+  "required": ["session_id", "timestamp", "user", "image", "status"],
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "description": "Unique session identifier (UUID)",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "examples": ["550e8400-e29b-41d4-a716-446655440000"]
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "Session creation timestamp (ISO 8601)",
+      "format": "date-time",
+      "examples": ["2024-12-03T10:30:00Z"]
+    },
+    "user": {
+      "type": "object",
+      "description": "User information",
+      "required": ["user_id", "username"],
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "Unique user identifier"
+        },
+        "username": {
+          "type": "string",
+          "description": "Username",
+          "minLength": 3,
+          "maxLength": 50
+        },
+        "email": {
+          "type": "string",
+          "description": "User email",
+          "format": "email"
+        },
+        "role": {
+          "type": "string",
+          "description": "User role",
+          "enum": ["analyst", "supervisor", "admin", "viewer"]
+        },
+        "organization": {
+          "type": "string",
+          "description": "Organization name",
+          "maxLength": 200
+        }
+      }
+    },
+    "image": {
+      "type": "object",
+      "description": "Source image information",
+      "required": ["filename", "width", "height", "format"],
+      "properties": {
+        "filename": {
+          "type": "string",
+          "description": "Original filename",
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "filepath": {
+          "type": "string",
+          "description": "Full file path"
+        },
+        "width": {
+          "type": "integer",
+          "description": "Image width in pixels",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "description": "Image height in pixels",
+          "minimum": 1
+        },
+        "format": {
+          "type": "string",
+          "description": "Image format",
+          "enum": ["jpg", "jpeg", "png", "tiff", "bmp", "raw"]
+        },
+        "size_bytes": {
+          "type": "integer",
+          "description": "File size in bytes",
+          "minimum": 0
+        },
+        "dpi": {
+          "type": "integer",
+          "description": "Dots per inch",
+          "minimum": 72
+        },
+        "color_space": {
+          "type": "string",
+          "description": "Color space",
+          "enum": ["rgb", "srgb", "adobe_rgb", "grayscale", "cmyk"]
+        },
+        "bit_depth": {
+          "type": "integer",
+          "description": "Bits per channel",
+          "enum": [8, 10, 12, 14, 16]
+        },
+        "exif": {
+          "type": "object",
+          "description": "EXIF metadata",
+          "properties": {
+            "camera_make": {"type": "string"},
+            "camera_model": {"type": "string"},
+            "lens": {"type": "string"},
+            "focal_length_mm": {"type": "number"},
+            "aperture": {"type": "string"},
+            "shutter_speed": {"type": "string"},
+            "iso": {"type": "integer"},
+            "white_balance": {"type": "string"},
+            "flash": {"type": "boolean"},
+            "date_taken": {"type": "string", "format": "date-time"}
+          }
+        }
+      }
+    },
+    "sample": {
+      "type": "object",
+      "description": "Sample information",
+      "properties": {
+        "sample_id": {
+          "type": "string",
+          "description": "Sample identifier",
+          "maxLength": 100
+        },
+        "description": {
+          "type": "string",
+          "description": "Sample description",
+          "maxLength": 1000
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "site": {"type": "string"},
+            "coordinates": {
+              "type": "object",
+              "properties": {
+                "latitude": {"type": "number", "minimum": -90, "maximum": 90},
+                "longitude": {"type": "number", "minimum": -180, "maximum": 180},
+                "elevation_m": {"type": "number"}
+              }
+            },
+            "address": {"type": "string"}
+          }
+        },
+        "collection_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Sample collection date"
+        },
+        "collector": {
+          "type": "string",
+          "description": "Person who collected sample"
+        },
+        "weight_g": {
+          "type": "number",
+          "description": "Sample weight in grams",
+          "minimum": 0
+        },
+        "dimensions_mm": {
+          "type": "object",
+          "properties": {
+            "length": {"type": "number", "minimum": 0},
+            "width": {"type": "number", "minimum": 0},
+            "height": {"type": "number", "minimum": 0}
+          }
+        }
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "description": "Analysis configuration and results",
+      "required": ["mode", "engines_used"],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "description": "Analysis mode",
+          "enum": ["ultra_fast", "fast", "balanced", "quality", "ultra_quality"]
+        },
+        "engines_used": {
+          "type": "array",
+          "description": "List of engines used",
+          "items": {"type": "string"},
+          "minItems": 1
+        },
+        "ai_models_used": {
+          "type": "array",
+          "description": "AI models used",
+          "items": {"type": "string"}
+        },
+        "processing_time_ms": {
+          "type": "number",
+          "description": "Total processing time in milliseconds",
+          "minimum": 0
+        },
+        "start_time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Analysis start timestamp"
+        },
+        "end_time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Analysis end timestamp"
+        }
+      }
+    },
+    "results": {
+      "type": "object",
+      "description": "Analysis results",
+      "properties": {
+        "particles_detected": {
+          "type": "integer",
+          "description": "Number of particles detected",
+          "minimum": 0
+        },
+        "particles": {
+          "type": "array",
+          "description": "Detected particles",
+          "items": {
+            "$ref": "particle.schema.json"
+          }
+        },
+        "mineral_summary": {
+          "type": "object",
+          "description": "Summary by mineral type",
+          "patternProperties": {
+            "^[A-Za-z0-9_]+$": {
+              "type": "object",
+              "properties": {
+                "count": {"type": "integer", "minimum": 0},
+                "total_area_px": {"type": "number", "minimum": 0},
+                "percentage": {"type": "number", "minimum": 0, "maximum": 100},
+                "average_confidence": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            }
+          }
+        },
+        "primary_mineral": {
+          "type": "string",
+          "description": "Primary mineral identified"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Overall confidence (%)",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "gold_detected": {
+          "type": "boolean",
+          "description": "Whether gold was detected"
+        },
+        "gold_purity_estimated": {
+          "type": "string",
+          "description": "Estimated gold purity (if applicable)",
+          "pattern": "^[0-9]+K$"
+        }
+      }
+    },
+    "masks": {
+      "type": "object",
+      "description": "Generated masks",
+      "properties": {
+        "class_mask_path": {"type": "string"},
+        "confidence_heatmap_path": {"type": "string"},
+        "boundary_mask_path": {"type": "string"},
+        "target_mask_path": {"type": "string"}
+      }
+    },
+    "reports": {
+      "type": "array",
+      "description": "Generated reports",
+      "items": {
+        "type": "object",
+        "properties": {
+          "report_type": {
+            "type": "string",
+            "enum": ["quick", "technical", "iso_17025", "comparative", "batch", "audit"]
+          },
+          "report_path": {"type": "string"},
+          "format": {
+            "type": "string",
+            "enum": ["pdf", "html", "docx", "json"]
+          },
+          "generated_at": {"type": "string", "format": "date-time"},
+          "size_bytes": {"type": "integer", "minimum": 0},
+          "blockchain_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "blockchain_tx": {"type": "string"}
+        }
+      }
+    },
+    "blockchain": {
+      "type": "object",
+      "description": "Blockchain verification data",
+      "properties": {
+        "registered": {"type": "boolean"},
+        "transaction_hash": {"type": "string"},
+        "block_number": {"type": "integer", "minimum": 0},
+        "network": {"type": "string", "enum": ["polygon", "arbitrum", "ethereum"]},
+        "contract_address": {"type": "string", "pattern": "^0x[0-9a-fA-F]{40}$"},
+        "report_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "timestamp": {"type": "string", "format": "date-time"},
+        "verification_url": {"type": "string", "format": "uri"}
+      }
+    },
+    "quality_control": {
+      "type": "object",
+      "description": "Quality control metrics",
+      "properties": {
+        "calibration_status": {
+          "type": "string",
+          "enum": ["valid", "expired", "warning", "invalid"]
+        },
+        "last_calibration_date": {"type": "string", "format": "date"},
+        "reference_standards_used": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "lighting_quality": {
+          "type": "string",
+          "enum": ["excellent", "good", "acceptable", "poor"]
+        },
+        "image_quality_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "warnings": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "errors": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "description": "Session status",
+      "enum": ["pending", "processing", "completed", "failed", "cancelled"]
+    },
+    "error": {
+      "type": "object",
+      "description": "Error information (if status is failed)",
+      "properties": {
+        "code": {"type": "string"},
+        "message": {"type": "string"},
+        "details": {"type": "string"},
+        "stack_trace": {"type": "string"}
+      }
+    },
+    "version": {
+      "type": "string",
+      "description": "System version",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "examples": ["1.0.0"]
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata",
+      "additionalProperties": true
+    },
+    "notes": {
+      "type": "string",
+      "description": "User notes",
+      "maxLength": 5000
+    },
+    "tags": {
+      "type": "array",
+      "description": "User-defined tags",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

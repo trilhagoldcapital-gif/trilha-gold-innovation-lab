@@ -1,0 +1,421 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://trilhagold.com/schemas/particle.schema.json",
+  "title": "Particle",
+  "description": "JSON Schema for detected particle data in TGC METAL ANALÍTICO ULTRA system",
+  "type": "object",
+  "required": ["particle_id", "mineral", "confidence", "bounding_box", "area_px"],
+  "properties": {
+    "particle_id": {
+      "type": "integer",
+      "description": "Unique particle identifier within session",
+      "minimum": 1
+    },
+    "mineral": {
+      "type": "string",
+      "description": "Identified mineral name",
+      "minLength": 1,
+      "maxLength": 100,
+      "examples": ["Gold", "Pyrite", "Quartz"]
+    },
+    "mineral_symbol": {
+      "type": "string",
+      "description": "Mineral chemical symbol",
+      "maxLength": 20,
+      "examples": ["Au", "FeS2", "SiO2"]
+    },
+    "category": {
+      "type": "string",
+      "description": "Mineral category",
+      "enum": [
+        "precious_metals",
+        "pgm",
+        "base_metals",
+        "sulfides",
+        "oxides",
+        "silicates",
+        "carbonates",
+        "halides",
+        "phosphates",
+        "native_elements",
+        "gems"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "description": "Classification confidence (%)",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "confidence_level": {
+      "type": "string",
+      "description": "Confidence level category",
+      "enum": ["absolute", "high", "medium", "low", "unknown"]
+    },
+    "bounding_box": {
+      "type": "object",
+      "description": "Particle bounding box in image coordinates",
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": {
+          "type": "number",
+          "description": "Top-left X coordinate",
+          "minimum": 0
+        },
+        "y": {
+          "type": "number",
+          "description": "Top-left Y coordinate",
+          "minimum": 0
+        },
+        "width": {
+          "type": "number",
+          "description": "Width in pixels",
+          "minimum": 1
+        },
+        "height": {
+          "type": "number",
+          "description": "Height in pixels",
+          "minimum": 1
+        }
+      }
+    },
+    "centroid": {
+      "type": "object",
+      "description": "Particle centroid coordinates",
+      "required": ["x", "y"],
+      "properties": {
+        "x": {"type": "number", "minimum": 0},
+        "y": {"type": "number", "minimum": 0}
+      }
+    },
+    "area_px": {
+      "type": "number",
+      "description": "Area in pixels",
+      "minimum": 0
+    },
+    "area_mm2": {
+      "type": "number",
+      "description": "Area in square millimeters (if calibrated)",
+      "minimum": 0
+    },
+    "perimeter_px": {
+      "type": "number",
+      "description": "Perimeter in pixels",
+      "minimum": 0
+    },
+    "mask": {
+      "type": "object",
+      "description": "Particle segmentation mask",
+      "properties": {
+        "rle_encoded": {
+          "type": "string",
+          "description": "Run-length encoded mask"
+        },
+        "polygon": {
+          "type": "array",
+          "description": "Polygon vertices",
+          "items": {
+            "type": "object",
+            "properties": {
+              "x": {"type": "number"},
+              "y": {"type": "number"}
+            }
+          }
+        }
+      }
+    },
+    "morphology": {
+      "type": "object",
+      "description": "Morphological measurements",
+      "properties": {
+        "circularity": {
+          "type": "number",
+          "description": "Circularity (0-1)",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "aspect_ratio": {
+          "type": "number",
+          "description": "Width/Height ratio",
+          "minimum": 0
+        },
+        "convexity": {
+          "type": "number",
+          "description": "Convex hull ratio",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "solidity": {
+          "type": "number",
+          "description": "Area/Convex area ratio",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "euler_number": {
+          "type": "integer",
+          "description": "Topological feature (holes)"
+        },
+        "eccentricity": {
+          "type": "number",
+          "description": "Ellipse eccentricity",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "orientation_deg": {
+          "type": "number",
+          "description": "Major axis orientation (degrees)",
+          "minimum": -180,
+          "maximum": 180
+        },
+        "major_axis_length": {"type": "number", "minimum": 0},
+        "minor_axis_length": {"type": "number", "minimum": 0}
+      }
+    },
+    "color_analysis": {
+      "type": "object",
+      "description": "Color analysis results",
+      "properties": {
+        "mean_rgb": {
+          "type": "object",
+          "properties": {
+            "r": {"type": "number", "minimum": 0, "maximum": 255},
+            "g": {"type": "number", "minimum": 0, "maximum": 255},
+            "b": {"type": "number", "minimum": 0, "maximum": 255}
+          }
+        },
+        "std_rgb": {
+          "type": "object",
+          "properties": {
+            "r": {"type": "number", "minimum": 0},
+            "g": {"type": "number", "minimum": 0},
+            "b": {"type": "number", "minimum": 0}
+          }
+        },
+        "mean_lab": {
+          "type": "object",
+          "properties": {
+            "l": {"type": "number", "minimum": 0, "maximum": 100},
+            "a": {"type": "number", "minimum": -128, "maximum": 127},
+            "b": {"type": "number", "minimum": -128, "maximum": 127}
+          }
+        },
+        "mean_hsv": {
+          "type": "object",
+          "properties": {
+            "h": {"type": "number", "minimum": 0, "maximum": 360},
+            "s": {"type": "number", "minimum": 0, "maximum": 100},
+            "v": {"type": "number", "minimum": 0, "maximum": 100}
+          }
+        },
+        "delta_e_to_reference": {
+          "type": "number",
+          "description": "Delta E to mineral reference",
+          "minimum": 0
+        }
+      }
+    },
+    "optical_properties": {
+      "type": "object",
+      "description": "Measured optical properties",
+      "properties": {
+        "reflectance_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "metallic_index": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "anisotropy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "sss_index": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "brightness_index": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "luster_consistency": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "texture_analysis": {
+      "type": "object",
+      "description": "Texture analysis results",
+      "properties": {
+        "has_striations": {"type": "boolean"},
+        "striation_direction_deg": {"type": "number"},
+        "surface_roughness": {"type": "number"},
+        "gabor_features": {
+          "type": "array",
+          "items": {"type": "number"}
+        },
+        "glcm_contrast": {"type": "number"},
+        "glcm_homogeneity": {"type": "number"},
+        "glcm_energy": {"type": "number"},
+        "glcm_correlation": {"type": "number"}
+      }
+    },
+    "highlights": {
+      "type": "object",
+      "description": "Specular highlight analysis",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pattern": {
+          "type": "string",
+          "enum": ["single_central", "multiple_faceted", "diffuse", "none"]
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "x": {"type": "number"},
+              "y": {"type": "number"},
+              "intensity": {"type": "number", "minimum": 0, "maximum": 255}
+            }
+          }
+        }
+      }
+    },
+    "crystal_structure": {
+      "type": "object",
+      "description": "Crystal structure analysis",
+      "properties": {
+        "system": {
+          "type": "string",
+          "enum": ["cubic", "hexagonal", "tetragonal", "orthorhombic", "monoclinic", "triclinic", "trigonal", "amorphous", "unknown"]
+        },
+        "detected_angles": {
+          "type": "array",
+          "items": {"type": "number", "minimum": 0, "maximum": 180}
+        },
+        "dominant_angle": {"type": "number"},
+        "cubic_faces_detected": {"type": "boolean"}
+      }
+    },
+    "gold_vs_pyrite_criteria": {
+      "type": "object",
+      "description": "Gold vs Pyrite 12-criteria analysis (if applicable)",
+      "properties": {
+        "criteria_met": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 12
+        },
+        "delta_e_lab": {"type": "number"},
+        "saturation_pass": {"type": "boolean"},
+        "bg_ratio_pass": {"type": "boolean"},
+        "metallic_index_pass": {"type": "boolean"},
+        "fresnel_reflectance_pass": {"type": "boolean"},
+        "anisotropy_pass": {"type": "boolean"},
+        "circularity_pass": {"type": "boolean"},
+        "angles_pass": {"type": "boolean"},
+        "edge_roughness_pass": {"type": "boolean"},
+        "surface_texture_pass": {"type": "boolean"},
+        "highlight_pattern_pass": {"type": "boolean"},
+        "sss_pass": {"type": "boolean"},
+        "overall_confidence": {"type": "number", "minimum": 0, "maximum": 100}
+      }
+    },
+    "ai_predictions": {
+      "type": "array",
+      "description": "Predictions from individual AI models",
+      "items": {
+        "type": "object",
+        "properties": {
+          "model": {"type": "string"},
+          "predicted_class": {"type": "string"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 100},
+          "processing_time_ms": {"type": "number", "minimum": 0}
+        }
+      }
+    },
+    "alternative_identifications": {
+      "type": "array",
+      "description": "Alternative mineral identifications (if confidence is not absolute)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "mineral": {"type": "string"},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 100},
+          "reason": {"type": "string"}
+        }
+      }
+    },
+    "geological_context": {
+      "type": "object",
+      "description": "Geological context analysis",
+      "properties": {
+        "associated_minerals_detected": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "context_matches": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "context_confidence_boost": {"type": "number"}
+      }
+    },
+    "quality_metrics": {
+      "type": "object",
+      "description": "Quality metrics for this particle",
+      "properties": {
+        "image_quality": {"type": "number", "minimum": 0, "maximum": 100},
+        "lighting_quality": {"type": "number", "minimum": 0, "maximum": 100},
+        "focus_quality": {"type": "number", "minimum": 0, "maximum": 100},
+        "occlusion_percentage": {"type": "number", "minimum": 0, "maximum": 100},
+        "boundary_clarity": {"type": "number", "minimum": 0, "maximum": 100}
+      }
+    },
+    "flags": {
+      "type": "object",
+      "description": "Analysis flags",
+      "properties": {
+        "requires_manual_review": {"type": "boolean"},
+        "low_confidence": {"type": "boolean"},
+        "ambiguous": {"type": "boolean"},
+        "occluded": {"type": "boolean"},
+        "edge_particle": {"type": "boolean"},
+        "multiple_minerals": {"type": "boolean"}
+      }
+    },
+    "user_interaction": {
+      "type": "object",
+      "description": "User interaction history",
+      "properties": {
+        "user_verified": {"type": "boolean"},
+        "user_corrected": {"type": "boolean"},
+        "user_correction": {"type": "string"},
+        "user_notes": {"type": "string"},
+        "marked_for_export": {"type": "boolean"}
+      }
+    },
+    "processing_time_ms": {
+      "type": "number",
+      "description": "Processing time for this particle in milliseconds",
+      "minimum": 0
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Detection timestamp"
+    }
+  },
+  "additionalProperties": false
+}

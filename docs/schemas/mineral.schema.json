@@ -1,0 +1,516 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://trilhagold.com/schemas/mineral.schema.json",
+  "title": "Mineral",
+  "description": "JSON Schema for mineral data in TGC METAL ANALÍTICO ULTRA system",
+  "type": "object",
+  "required": ["symbol", "name", "name_en", "category", "formula", "density_g_cm3", "hardness_mohs", "crystal_system", "luster"],
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "description": "Chemical symbol or formula abbreviation",
+      "minLength": 1,
+      "maxLength": 20,
+      "examples": ["Au", "FeS2", "SiO2"]
+    },
+    "name": {
+      "type": "string",
+      "description": "Mineral name in Portuguese",
+      "minLength": 1,
+      "maxLength": 100,
+      "examples": ["Ouro", "Pirita", "Quartzo"]
+    },
+    "name_en": {
+      "type": "string",
+      "description": "Mineral name in English",
+      "minLength": 1,
+      "maxLength": 100,
+      "examples": ["Gold", "Pyrite", "Quartz"]
+    },
+    "category": {
+      "type": "string",
+      "description": "Mineral category classification",
+      "enum": [
+        "precious_metals",
+        "pgm",
+        "base_metals",
+        "sulfides",
+        "oxides",
+        "silicates",
+        "carbonates",
+        "halides",
+        "phosphates",
+        "native_elements",
+        "gems"
+      ]
+    },
+    "formula": {
+      "type": "string",
+      "description": "Chemical formula",
+      "minLength": 1,
+      "maxLength": 100,
+      "examples": ["Au", "FeS2", "SiO2"]
+    },
+    "atomic_number": {
+      "type": "integer",
+      "description": "Atomic number (for elements only)",
+      "minimum": 1,
+      "maximum": 118
+    },
+    "density_g_cm3": {
+      "type": "number",
+      "description": "Density in g/cm³",
+      "minimum": 0.1,
+      "maximum": 25.0,
+      "examples": [19.3, 5.02, 2.65]
+    },
+    "hardness_mohs": {
+      "type": "number",
+      "description": "Mohs hardness scale (1-10)",
+      "minimum": 1.0,
+      "maximum": 10.0,
+      "examples": [2.5, 6.0, 7.0]
+    },
+    "crystal_system": {
+      "type": "string",
+      "description": "Crystal system classification",
+      "enum": [
+        "cubic",
+        "hexagonal",
+        "tetragonal",
+        "orthorhombic",
+        "monoclinic",
+        "triclinic",
+        "trigonal",
+        "amorphous"
+      ]
+    },
+    "luster": {
+      "type": "string",
+      "description": "Surface luster appearance",
+      "enum": [
+        "metallic",
+        "submetallic",
+        "vitreous",
+        "resinous",
+        "pearly",
+        "silky",
+        "greasy",
+        "adamantine",
+        "dull",
+        "earthy"
+      ]
+    },
+    "streak": {
+      "type": "string",
+      "description": "Color of powdered mineral",
+      "maxLength": 50,
+      "examples": ["golden-yellow", "greenish-black", "white"]
+    },
+    "opacity": {
+      "type": "string",
+      "description": "Light transmission property",
+      "enum": ["opaque", "translucent", "transparent", "semi-transparent"]
+    },
+    "optical_properties": {
+      "type": "object",
+      "description": "Optical and spectral properties",
+      "properties": {
+        "color_rgb": {
+          "type": "object",
+          "description": "RGB color values (0-255)",
+          "required": ["r", "g", "b"],
+          "properties": {
+            "r": {"type": "integer", "minimum": 0, "maximum": 255},
+            "g": {"type": "integer", "minimum": 0, "maximum": 255},
+            "b": {"type": "integer", "minimum": 0, "maximum": 255}
+          }
+        },
+        "color_rgb_range": {
+          "type": "object",
+          "description": "Acceptable RGB value ranges",
+          "properties": {
+            "r": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 255}, "minItems": 2, "maxItems": 2},
+            "g": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 255}, "minItems": 2, "maxItems": 2},
+            "b": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 255}, "minItems": 2, "maxItems": 2}
+          }
+        },
+        "color_lab": {
+          "type": "object",
+          "description": "CIE LAB color values",
+          "required": ["l", "a", "b"],
+          "properties": {
+            "l": {"type": "number", "minimum": 0, "maximum": 100, "description": "Lightness"},
+            "a": {"type": "number", "minimum": -128, "maximum": 127, "description": "Green-Red"},
+            "b": {"type": "number", "minimum": -128, "maximum": 127, "description": "Blue-Yellow"}
+          }
+        },
+        "color_lab_range": {
+          "type": "object",
+          "description": "Acceptable LAB value ranges",
+          "properties": {
+            "l": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2},
+            "a": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2},
+            "b": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2}
+          }
+        },
+        "color_hsv": {
+          "type": "object",
+          "description": "HSV color values",
+          "required": ["h", "s", "v"],
+          "properties": {
+            "h": {"type": "number", "minimum": 0, "maximum": 360, "description": "Hue"},
+            "s": {"type": "number", "minimum": 0, "maximum": 100, "description": "Saturation"},
+            "v": {"type": "number", "minimum": 0, "maximum": 100, "description": "Value"}
+          }
+        },
+        "color_hsv_range": {
+          "type": "object",
+          "description": "Acceptable HSV value ranges",
+          "properties": {
+            "h": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2},
+            "s": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2},
+            "v": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2}
+          }
+        },
+        "refractive_index_n": {
+          "type": "number",
+          "description": "Real part of refractive index",
+          "minimum": 0.01,
+          "maximum": 5.0
+        },
+        "extinction_coefficient_k": {
+          "type": "number",
+          "description": "Imaginary part of refractive index",
+          "minimum": 0.0,
+          "maximum": 10.0
+        },
+        "reflectance_percent": {
+          "type": "number",
+          "description": "Normal incidence reflectance (%)",
+          "minimum": 0.0,
+          "maximum": 100.0
+        },
+        "reflectance_range": {
+          "type": "object",
+          "properties": {
+            "min": {"type": "number", "minimum": 0, "maximum": 100},
+            "max": {"type": "number", "minimum": 0, "maximum": 100}
+          }
+        },
+        "reflectance_by_wavelength": {
+          "type": "object",
+          "description": "Reflectance at specific wavelengths",
+          "patternProperties": {
+            "^[0-9]+nm$": {"type": "number", "minimum": 0, "maximum": 100}
+          }
+        },
+        "anisotropy": {
+          "type": "number",
+          "description": "Anisotropy index (0=isotropic, 1=highly anisotropic)",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "sss_index": {
+          "type": "number",
+          "description": "Subsurface scattering index",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "metallic_index_min": {
+          "type": "number",
+          "description": "Minimum metallic index",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "transparency": {
+          "type": "string",
+          "enum": ["transparent", "translucent", "opaque", "semi-transparent"]
+        },
+        "tarnish": {
+          "type": "string",
+          "description": "Tarnish characteristics",
+          "maxLength": 100
+        }
+      }
+    },
+    "texture_properties": {
+      "type": "object",
+      "description": "Surface texture characteristics",
+      "properties": {
+        "surface": {
+          "type": "string",
+          "enum": ["smooth", "rough", "striated", "pitted", "granular", "fibrous"]
+        },
+        "striations": {
+          "type": "boolean",
+          "description": "Presence of striations"
+        },
+        "striation_direction": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "fracture": {
+          "type": "string",
+          "enum": ["conchoidal", "hackly", "uneven", "splintery", "earthy"]
+        },
+        "cleavage": {
+          "type": "string",
+          "description": "Cleavage type and quality",
+          "maxLength": 100
+        }
+      }
+    },
+    "morphology": {
+      "type": "object",
+      "description": "Morphological characteristics",
+      "properties": {
+        "typical_forms": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Common crystal or grain forms"
+        },
+        "circularity": {
+          "type": "object",
+          "properties": {
+            "min": {"type": "number", "minimum": 0, "maximum": 1},
+            "max": {"type": "number", "minimum": 0, "maximum": 1}
+          }
+        },
+        "typical_size_mm": {
+          "type": "object",
+          "properties": {
+            "min": {"type": "number", "minimum": 0},
+            "max": {"type": "number", "minimum": 0}
+          }
+        },
+        "face_angles": {
+          "type": "array",
+          "items": {"type": "number", "minimum": 0, "maximum": 180},
+          "description": "Characteristic interfacial angles"
+        },
+        "cubic_faces": {
+          "type": "boolean",
+          "description": "Presence of cubic crystal faces"
+        },
+        "malleability": {
+          "type": "string",
+          "enum": ["very_high", "high", "moderate", "low", "brittle"]
+        },
+        "ductility": {
+          "type": "string",
+          "enum": ["very_high", "high", "moderate", "low", "brittle"]
+        }
+      }
+    },
+    "geological_context": {
+      "type": "object",
+      "description": "Geological occurrence information",
+      "properties": {
+        "environments": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Typical geological environments"
+        },
+        "associated_minerals": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Commonly associated minerals"
+        },
+        "host_rocks": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Typical host rock types"
+        },
+        "indicator_minerals": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Minerals that indicate this deposit type"
+        },
+        "indicator_of": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "What this mineral indicates"
+        },
+        "weathering": {
+          "type": "string",
+          "description": "Weathering characteristics",
+          "maxLength": 200
+        }
+      }
+    },
+    "vs_pyrite": {
+      "type": "object",
+      "description": "Discrimination criteria vs pyrite (for gold)",
+      "properties": {
+        "delta_e_lab": {"type": "number"},
+        "saturation_diff": {"type": "string"},
+        "bg_ratio_diff": {"type": "string"},
+        "metallic_index_diff": {"type": "string"},
+        "fresnel_reflectance_diff": {"type": "string"},
+        "anisotropy_diff": {"type": "string"},
+        "circularity_diff": {"type": "string"},
+        "has_striations": {"type": "boolean"},
+        "highlight_pattern": {"type": "string"},
+        "sss_diff": {"type": "string"},
+        "rugosity_diff": {"type": "string"},
+        "discrimination_confidence": {"type": "number", "minimum": 0, "maximum": 100}
+      }
+    },
+    "vs_gold": {
+      "type": "object",
+      "description": "Discrimination criteria vs gold (for pyrite)",
+      "properties": {
+        "delta_e_lab": {"type": "number"},
+        "commonly_confused": {"type": "boolean"},
+        "nickname": {"type": "string"},
+        "key_differences": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "purity_grades": {
+      "type": "object",
+      "description": "Purity grades (for precious metals)",
+      "patternProperties": {
+        "^[0-9]+K$": {
+          "type": "object",
+          "properties": {
+            "percent": {"type": "number", "minimum": 0, "maximum": 100},
+            "brightness": {"type": "string"},
+            "color": {"type": "string"}
+          }
+        }
+      }
+    },
+    "economic": {
+      "type": "object",
+      "description": "Economic information",
+      "properties": {
+        "value": {"type": "string"},
+        "value_usd_per_gram": {"type": "number", "minimum": 0},
+        "primary_uses": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "global_production_tonnes_per_year": {"type": "number", "minimum": 0},
+        "rarity": {
+          "type": "string",
+          "enum": ["very_common", "common", "uncommon", "rare", "very_rare"]
+        },
+        "primary_copper_ore": {"type": "boolean"},
+        "primary_nickel_ore": {"type": "boolean"},
+        "primary_tin_ore": {"type": "boolean"},
+        "often_associated_with": {"type": "string"}
+      }
+    },
+    "analysis_settings": {
+      "type": "object",
+      "description": "Recommended analysis settings",
+      "properties": {
+        "confidence_threshold_min": {"type": "number", "minimum": 0, "maximum": 100},
+        "recommended_lighting": {"type": "string"},
+        "magnification_range": {"type": "string"},
+        "sample_preparation": {"type": "string"}
+      }
+    },
+    "magnetic": {
+      "type": ["boolean", "string"],
+      "description": "Magnetic properties"
+    },
+    "radioactive": {
+      "type": "boolean",
+      "description": "Radioactivity"
+    },
+    "fluorescence": {
+      "type": "boolean",
+      "description": "Fluorescent properties"
+    },
+    "varieties": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Mineral varieties"
+    },
+    "variety_of": {
+      "type": "string",
+      "description": "Parent mineral for varieties"
+    },
+    "chromophore": {
+      "type": "string",
+      "description": "Color-causing element"
+    },
+    "color": {
+      "type": "string",
+      "description": "General color description"
+    },
+    "nickname": {
+      "type": "string",
+      "description": "Common nickname"
+    },
+    "note": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "hardest_natural_material": {
+      "type": "boolean",
+      "description": "Whether this is the hardest natural material"
+    },
+    "softest_mineral": {
+      "type": "boolean",
+      "description": "Whether this is the softest mineral"
+    },
+    "most_common_mineral": {
+      "type": "boolean",
+      "description": "Whether this is the most common mineral"
+    },
+    "play_of_color": {
+      "type": "boolean",
+      "description": "Whether it displays play of color"
+    },
+    "amorphous": {
+      "type": "boolean",
+      "description": "Whether the mineral is amorphous"
+    },
+    "taste": {
+      "type": "string",
+      "description": "Taste characteristic (for soluble minerals)"
+    },
+    "effervescence": {
+      "type": "string",
+      "description": "Reaction with acid"
+    },
+    "cleavage": {
+      "type": "string",
+      "description": "Cleavage properties"
+    },
+    "primary_copper_ore": {
+      "type": "boolean"
+    },
+    "primary_nickel_ore": {
+      "type": "boolean"
+    },
+    "primary_tin_ore": {
+      "type": "boolean"
+    },
+    "primary_silver_ore": {
+      "type": "boolean"
+    },
+    "important_silver_ore": {
+      "type": "boolean"
+    },
+    "arsenic_content": {
+      "type": "string"
+    },
+    "secondary_mineral": {
+      "type": "boolean"
+    },
+    "molybdenum_indicator": {
+      "type": "boolean"
+    },
+    "secondary_zinc_ore": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

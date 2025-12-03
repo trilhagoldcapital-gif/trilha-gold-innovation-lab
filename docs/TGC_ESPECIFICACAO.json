@@ -1,0 +1,612 @@
+{
+  "system": {
+    "name": "TGC METAL ANALÍTICO ULTRA",
+    "version": "1.0.0",
+    "precision_target": 99.9,
+    "platform": "Windows",
+    "framework": ".NET 8",
+    "ui_framework": "WPF",
+    "release_date": "2024-12",
+    "status": "Development"
+  },
+  "vision_mission": {
+    "vision": "Transformar qualquer PC Windows em um laboratório completo de análise mineralógica de nível profissional",
+    "mission": "Fornecer certeza operacional absoluta na identificação de metais preciosos e minerais através de um sistema multi-engine de análise",
+    "objectives": [
+      "Atingir 99.9% de precisão na diferenciação Ouro vs Pirita",
+      "Análise completa em menos de 500ms por imagem",
+      "Sistema de validação em 12 critérios independentes",
+      "Certificação blockchain de todos os relatórios",
+      "Interface intuitiva para operadores de qualquer nível técnico"
+    ]
+  },
+  "architecture": {
+    "layers": [
+      {
+        "name": "Presentation",
+        "components": ["WPF Shell", "WinForms Legacy", "Web Viewer"]
+      },
+      {
+        "name": "Application",
+        "components": ["Session Service", "Report Service", "Export Service", "Analysis Service", "Calibration Service", "Blockchain Service"]
+      },
+      {
+        "name": "Engine",
+        "components": ["45+ Analysis Engines", "12 AI Models", "12 Mouse Detectors"]
+      },
+      {
+        "name": "Data",
+        "components": ["SQLite", "PostgreSQL", "MongoDB", "Redis"]
+      },
+      {
+        "name": "Integration",
+        "components": ["Blockchain", "Email", "FTP", "Cloud Storage"]
+      }
+    ]
+  },
+  "engines": {
+    "color_and_light": [
+      {
+        "name": "LAB Color Engine",
+        "precision": 99.5,
+        "processing_time_ms": 2,
+        "description": "Análise no espaço de cor CIE LAB",
+        "gold_range": {"l": [82, 92], "a": [-3, 7], "b": [82, 92]},
+        "pyrite_range": {"l": [70, 80], "a": [3, 14], "b": [58, 72]},
+        "threshold": {"delta_e": 15}
+      },
+      {
+        "name": "HSV Analyzer",
+        "precision": 99.3,
+        "processing_time_ms": 1,
+        "description": "Separação cromática em Hue, Saturation, Value",
+        "gold_range": {"h": [48, 54], "s": [65, 100], "v": [85, 100]},
+        "pyrite_range": {"h": [55, 60], "s": [45, 60], "v": [70, 85]}
+      },
+      {
+        "name": "Luminance Engine",
+        "precision": 99.4,
+        "processing_time_ms": 5,
+        "description": "Correção e análise de iluminação"
+      },
+      {
+        "name": "White Balance Auto",
+        "precision": 99.6,
+        "processing_time_ms": 10,
+        "algorithms": ["Gray World", "White Patch", "Learning-based AWB"]
+      },
+      {
+        "name": "CLAHE Enhancer",
+        "precision": 99.2,
+        "processing_time_ms": 15,
+        "parameters": {"clip_limit": 2.0, "tile_grid_size": [8, 8]}
+      }
+    ],
+    "brightness_reflection": [
+      {
+        "name": "Metallic Shine Detector",
+        "precision": 99.7,
+        "processing_time_ms": 5,
+        "metrics": {
+          "SBI": {"gold": ">0.85", "pyrite": "<0.70"},
+          "LCR": "uniformity_measure",
+          "MI": {"gold": ">0.85", "pyrite": "<0.70"}
+        }
+      },
+      {
+        "name": "Specular Reflection Analyzer",
+        "precision": 99.4,
+        "processing_time_ms": 8,
+        "features": ["highlight_detection", "highlight_count", "distribution_pattern"]
+      },
+      {
+        "name": "Anisotropy Engine",
+        "precision": 99.5,
+        "processing_time_ms": 12,
+        "method": "Gabor filters 8 directions",
+        "threshold": {"gold": "<0.15", "pyrite": ">0.20"}
+      },
+      {
+        "name": "Fresnel Reflection Engine",
+        "precision": 99.8,
+        "processing_time_ms": 10,
+        "description": "INOVAÇÃO MUNDIAL - Cálculo baseado em propriedades ópticas reais",
+        "gold": {"n": 0.27, "k": 2.95, "reflectance": 95},
+        "pyrite": {"n": 1.45, "k": 0.10, "reflectance": 54},
+        "discrimination": 41
+      },
+      {
+        "name": "Subsurface Scattering Detector",
+        "precision": 99.6,
+        "processing_time_ms": 8,
+        "gold_sss": 0.0,
+        "pyrite_sss": 0.05
+      }
+    ],
+    "anti_confusion": [
+      {
+        "name": "Gold vs Pyrite Discriminator",
+        "precision": 99.9,
+        "processing_time_ms": 20,
+        "criteria_count": 12,
+        "description": "Sistema especializado de 12 critérios independentes"
+      },
+      {
+        "name": "Exclusion Proof Analyzer",
+        "precision": 99.8,
+        "processing_time_ms": 25,
+        "exclusion_rules": [
+          "cubic_striations => NOT gold",
+          "magnetic => NOT gold",
+          "sss > 0.1 => NOT metal",
+          "hardness > 4 => NOT pure gold"
+        ]
+      },
+      {
+        "name": "Zero-Tolerance Confidence Engine",
+        "precision": 99.95,
+        "processing_time_ms": 5,
+        "confidence_levels": {
+          "absolute": {"range": [99, 100], "criteria": "12/12"},
+          "high": {"range": [95, 99], "criteria": "10-11/12"},
+          "medium": {"range": [85, 95], "criteria": "8-9/12"},
+          "low": {"range": [0, 85], "criteria": "<8/12", "action": "manual_review"}
+        }
+      }
+    ],
+    "texture_morphology": [
+      {
+        "name": "Gabor Texture Analyzer",
+        "precision": 99.4,
+        "processing_time_ms": 15,
+        "parameters": {
+          "scales": 5,
+          "orientations": 8,
+          "phases": [0, 90]
+        }
+      },
+      {
+        "name": "Crystal Structure Detector",
+        "precision": 99.2,
+        "processing_time_ms": 20,
+        "crystal_systems": ["cubic", "hexagonal", "tetragonal", "orthorhombic", "monoclinic", "triclinic"]
+      },
+      {
+        "name": "Morphology Classifier",
+        "precision": 99.4,
+        "processing_time_ms": 10,
+        "features": ["circularity", "aspect_ratio", "convexity", "solidity", "euler_number"]
+      }
+    ],
+    "geological_context": [
+      {
+        "name": "Geological Context Engine",
+        "precision": 99.3,
+        "processing_time_ms": 5,
+        "associations": {
+          "gold": ["quartz", "oxidized_pyrite", "arsenopyrite"],
+          "pyrite": ["quartz", "calcite"],
+          "pgms": ["chromite", "olivine", "serpentine"]
+        }
+      },
+      {
+        "name": "Deposit Fingerprint Matcher",
+        "precision": 95.0,
+        "processing_time_ms": 50,
+        "deposit_types": ["orogenic", "epithermal", "placer", "vms", "porphyry", "iocg"]
+      }
+    ]
+  },
+  "gold_vs_pyrite_criteria": [
+    {
+      "id": 1,
+      "name": "Delta E LAB",
+      "weight": 10,
+      "reliability": 99.5,
+      "threshold": 15,
+      "gold_values": {"l": 86.9, "a": 1.9, "b": 87.1},
+      "pyrite_values": {"l": 75.0, "a": 8.5, "b": 65.0},
+      "delta_e": 22.8
+    },
+    {
+      "id": 2,
+      "name": "Saturação HSV",
+      "weight": 8,
+      "reliability": 99.3,
+      "gold": {"saturation": ">65%"},
+      "pyrite": {"saturation": "<60%"}
+    },
+    {
+      "id": 3,
+      "name": "Razão B/G",
+      "weight": 7,
+      "reliability": 99.1,
+      "gold": {"ratio": "<0.1"},
+      "pyrite": {"ratio": ">0.4"}
+    },
+    {
+      "id": 4,
+      "name": "Índice Metálico",
+      "weight": 9,
+      "reliability": 99.7,
+      "gold": {"mi": ">0.85"},
+      "pyrite": {"mi": "<0.70"}
+    },
+    {
+      "id": 5,
+      "name": "Reflectância Fresnel",
+      "weight": 12,
+      "reliability": 99.8,
+      "description": "CRITÉRIO-CHAVE",
+      "gold": {"reflectance": 95},
+      "pyrite": {"reflectance": 54},
+      "discrimination": 41
+    },
+    {
+      "id": 6,
+      "name": "Anisotropia",
+      "weight": 8,
+      "reliability": 99.5,
+      "gold": {"anisotropy": "<0.15"},
+      "pyrite": {"anisotropy": ">0.20"}
+    },
+    {
+      "id": 7,
+      "name": "Circularidade",
+      "weight": 7,
+      "reliability": 99.4,
+      "gold": {"circularity": ">0.6"},
+      "pyrite": {"circularity": "<0.5"}
+    },
+    {
+      "id": 8,
+      "name": "Ângulos Internos",
+      "weight": 6,
+      "reliability": 98.8,
+      "pyrite": {"dominant_angle": 90, "cubic_faces": true}
+    },
+    {
+      "id": 9,
+      "name": "Rugosidade de Borda",
+      "weight": 6,
+      "reliability": 98.5,
+      "gold": {"roughness": "<1.2"},
+      "pyrite": {"roughness": ">1.3"}
+    },
+    {
+      "id": 10,
+      "name": "Textura Superficial",
+      "weight": 8,
+      "reliability": 99.6,
+      "gold": {"texture": "smooth"},
+      "pyrite": {"texture": "striated"}
+    },
+    {
+      "id": 11,
+      "name": "Padrão de Highlight",
+      "weight": 7,
+      "reliability": 99.2,
+      "gold": {"highlights": "1-2", "pattern": "central_diffuse"},
+      "pyrite": {"highlights": "3-8", "pattern": "multiple_faceted"}
+    },
+    {
+      "id": 12,
+      "name": "Índice SSS",
+      "weight": 6,
+      "reliability": 99.6,
+      "gold": {"sss": 0.0},
+      "pyrite": {"sss": ">0.05"}
+    }
+  ],
+  "ai_models": [
+    {
+      "name": "ResNet-152",
+      "weight": 12,
+      "size_mb": 230,
+      "processing_time_ms": 15,
+      "specialty": "Classificação geral"
+    },
+    {
+      "name": "EfficientNet-V2-L",
+      "weight": 12,
+      "size_mb": 256,
+      "processing_time_ms": 18,
+      "specialty": "Eficiência computacional"
+    },
+    {
+      "name": "ViT-Large",
+      "weight": 10,
+      "size_mb": 330,
+      "processing_time_ms": 25,
+      "specialty": "Vision Transformer"
+    },
+    {
+      "name": "Swin Transformer V2",
+      "weight": 10,
+      "size_mb": 280,
+      "processing_time_ms": 22,
+      "specialty": "Atenção hierárquica"
+    },
+    {
+      "name": "ConvNeXt-XL",
+      "weight": 10,
+      "size_mb": 350,
+      "processing_time_ms": 20,
+      "specialty": "ConvNet modernizado"
+    },
+    {
+      "name": "U-Net++",
+      "weight": 8,
+      "size_mb": 124,
+      "processing_time_ms": 30,
+      "specialty": "Segmentação precisa"
+    },
+    {
+      "name": "Mask R-CNN",
+      "weight": 8,
+      "size_mb": 178,
+      "processing_time_ms": 35,
+      "specialty": "Detecção + segmentação"
+    },
+    {
+      "name": "YOLOv8-XL",
+      "weight": 6,
+      "size_mb": 87,
+      "processing_time_ms": 8,
+      "specialty": "Detecção rápida"
+    },
+    {
+      "name": "CLIP",
+      "weight": 6,
+      "size_mb": 400,
+      "processing_time_ms": 40,
+      "specialty": "Vision-Language"
+    },
+    {
+      "name": "SAM",
+      "weight": 6,
+      "size_mb": 396,
+      "processing_time_ms": 50,
+      "specialty": "Segment Anything"
+    },
+    {
+      "name": "VAE Autoencoder",
+      "weight": 6,
+      "size_mb": 45,
+      "processing_time_ms": 5,
+      "specialty": "Representação latente"
+    },
+    {
+      "name": "Custom Mineral Net",
+      "weight": 6,
+      "size_mb": 156,
+      "processing_time_ms": 12,
+      "specialty": "Treinado em dataset TGC"
+    }
+  ],
+  "ai_consensus": {
+    "high_confidence": ">=7/12 models agree",
+    "medium_confidence": "5-6/12 models agree",
+    "inconclusive": "<5/12 models agree, manual review required"
+  },
+  "mouse_detectors": [
+    {
+      "name": "Instant Probe",
+      "activation": "hover",
+      "time_ms": 8,
+      "info": "RGB, LAB, HSV instantâneo"
+    },
+    {
+      "name": "Deep Probe",
+      "activation": "hover_0.3s",
+      "time_ms": 50,
+      "info": "Análise completa 45+ engines"
+    },
+    {
+      "name": "Area Probe",
+      "activation": "hover_0.5s",
+      "time_ms": 100,
+      "info": "Estatísticas região 5×5 px"
+    },
+    {
+      "name": "Particle Probe",
+      "activation": "click",
+      "time_ms": 150,
+      "info": "Segmentação + análise completa"
+    },
+    {
+      "name": "Cluster Probe",
+      "activation": "double_click",
+      "time_ms": 300,
+      "info": "Análise de cluster"
+    },
+    {
+      "name": "Comparison Probe",
+      "activation": "ctrl_click",
+      "time_ms": 200,
+      "info": "Compara 2+ pontos"
+    },
+    {
+      "name": "History Probe",
+      "activation": "shift_click",
+      "time_ms": 100,
+      "info": "Histórico de análises"
+    },
+    {
+      "name": "Mark Probe",
+      "activation": "alt_click",
+      "time_ms": 0,
+      "info": "Marca ponto de interesse"
+    },
+    {
+      "name": "Boundary Detector",
+      "activation": "auto",
+      "time_ms": "continuous",
+      "info": "Detecta bordas"
+    },
+    {
+      "name": "Gradient Analyzer",
+      "activation": "auto",
+      "time_ms": "continuous",
+      "info": "Analisa gradientes"
+    },
+    {
+      "name": "Inclusion Finder",
+      "activation": "auto",
+      "time_ms": "continuous",
+      "info": "Detecta inclusões"
+    },
+    {
+      "name": "Predictive Detector",
+      "activation": "auto",
+      "time_ms": "continuous",
+      "info": "Sugere próximos pontos"
+    }
+  ],
+  "masks": {
+    "class_masks": {
+      "count": 35,
+      "categories": ["precious_metals", "pgms", "base_metals", "sulfides", "oxides", "silicates", "carbonates", "halides", "phosphates", "native_elements", "gems"]
+    },
+    "target_mask": {
+      "operations": ["OR", "AND", "NOT"],
+      "example": "(Gold OR Silver) AND (NOT Pyrite)"
+    },
+    "brightness_mask": {
+      "correlation": "purity",
+      "ranges": [
+        {"brightness": ">90%", "purity": "22-24K"},
+        {"brightness": "80-90%", "purity": "18-22K"},
+        {"brightness": "70-80%", "purity": "14-18K"},
+        {"brightness": "<70%", "purity": "<14K"}
+      ]
+    },
+    "confidence_heatmap": {
+      "colors": [
+        {"range": [95, 100], "color": "green", "label": "Confiança absoluta"},
+        {"range": [85, 95], "color": "yellow", "label": "Confiança alta"},
+        {"range": [75, 85], "color": "orange", "label": "Confiança média"},
+        {"range": [0, 75], "color": "red", "label": "Baixa confiança"}
+      ]
+    }
+  },
+  "reports": [
+    {
+      "type": "Quick Report",
+      "pages": "1-2",
+      "generation_time_s": 5,
+      "content": ["image_with_masks", "main_identification", "confidence", "top_3_minerals"]
+    },
+    {
+      "type": "Technical Report",
+      "pages": "10-15",
+      "generation_time_s": 30,
+      "content": ["full_45_engines_analysis", "result_tables", "confidence_charts", "optical_data", "recommendations"]
+    },
+    {
+      "type": "ISO 17025 Full Report",
+      "pages": "40-50",
+      "generation_time_s": 120,
+      "content": ["lab_certification", "full_traceability", "detailed_methodology", "measurement_uncertainty", "references", "blockchain_qr", "digital_signature"]
+    },
+    {
+      "type": "Comparative Report",
+      "description": "Comparação lado a lado de 2+ amostras"
+    },
+    {
+      "type": "Batch Report",
+      "description": "Análise consolidada de lote"
+    },
+    {
+      "type": "Audit Report",
+      "description": "Histórico completo de análises"
+    }
+  ],
+  "blockchain": {
+    "network": "Ethereum Layer 2",
+    "options": ["Polygon", "Arbitrum"],
+    "contract": "TGCReportRegistry",
+    "cost_per_report": "$0.01",
+    "verification": "QR Code",
+    "features": ["report_hash", "timestamp", "analyst_address", "sample_id", "mineral_detected", "confidence"]
+  },
+  "system_requirements": {
+    "minimum": {
+      "os": "Windows 10 64-bit (21H2+)",
+      "cpu": "Intel Core i5 10th gen or AMD Ryzen 5 3600",
+      "ram": "8 GB",
+      "gpu": "Intel UHD Graphics 630 or better",
+      "storage": "10 GB SSD",
+      "resolution": "1920×1080"
+    },
+    "recommended": {
+      "os": "Windows 11 64-bit",
+      "cpu": "Intel Core i7-1260P (12th gen) or better",
+      "ram": "16 GB",
+      "gpu": "Intel Iris Xe Graphics or NVIDIA GTX 1650",
+      "storage": "20 GB NVMe SSD",
+      "resolution": "2560×1440 or 4K"
+    },
+    "ideal": {
+      "os": "Windows 11 Pro 64-bit",
+      "cpu": "Intel Core i9-13900K or AMD Ryzen 9 7950X",
+      "ram": "32 GB DDR5",
+      "gpu": "NVIDIA RTX 4070 or better",
+      "storage": "50 GB NVMe Gen 4 SSD",
+      "resolution": "4K (3840×2160)"
+    }
+  },
+  "roadmap": {
+    "total_weeks": 32,
+    "phases": [
+      {
+        "phase": "1-4",
+        "name": "Fundação .NET 8",
+        "weeks": 4,
+        "tasks": ["Configuração projeto", "Estrutura WPF + MVVM", "Integração OpenCV", "Sistema de logging"]
+      },
+      {
+        "phase": "5-8",
+        "name": "Motores de Análise",
+        "weeks": 4,
+        "tasks": ["5 motores Cor e Luz", "5 motores Brilho e Reflexão", "Teste e calibração"]
+      },
+      {
+        "phase": "9-12",
+        "name": "IA Ensemble",
+        "weeks": 4,
+        "tasks": ["Integração 12 modelos", "Sistema de consenso", "Otimização performance"]
+      },
+      {
+        "phase": "13-16",
+        "name": "Detecção Mouse",
+        "weeks": 4,
+        "tasks": ["Implementação 12 detectores", "Sistema de overlays", "UX/UI refinamento"]
+      },
+      {
+        "phase": "17-20",
+        "name": "Máscaras",
+        "weeks": 4,
+        "tasks": ["35 classes minerais", "Operações booleanas", "Heatmaps confiança"]
+      },
+      {
+        "phase": "21-24",
+        "name": "Relatórios",
+        "weeks": 4,
+        "tasks": ["6 tipos relatórios", "Templates profissionais", "Exportação multi-formato"]
+      },
+      {
+        "phase": "25-28",
+        "name": "Integrações",
+        "weeks": 4,
+        "tasks": ["Blockchain Polygon", "Bancos de dados", "Cloud storage"]
+      },
+      {
+        "phase": "29-32",
+        "name": "Educação e Polimento",
+        "weeks": 4,
+        "tasks": ["Documentação completa", "Tutoriais e vídeos", "Beta testing", "Lançamento 1.0"]
+      }
+    ]
+  }
+}
